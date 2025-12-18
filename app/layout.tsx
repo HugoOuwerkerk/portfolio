@@ -5,8 +5,13 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Hugo Ouwerkerk - Full Stack Developer",
-  description: "Personal portfolio of Hugo Ouwerkerk. Full Stack Developer specializing in React, Next.js, and Modern Web Design.",
+  title: "Hugo Ouwerkerk - Software Developer",
+  description: "Personal portfolio of Hugo Ouwerkerk. Software Developer based in Halle, Germany.",
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
@@ -19,4 +24,4 @@ export default function RootLayout({
       <body className={inter.className}>{children}</body>
     </html>
   );
-}
+} 
