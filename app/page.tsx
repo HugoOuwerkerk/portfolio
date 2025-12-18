@@ -133,7 +133,7 @@ export default function Home() {
           <ProjectShowcase
             title="Beim Schweinswirt"
             cat="Official Website"
-            desc="The digital home of the restaurant. Designed and built to showcase the menu and atmosphere. Real-world project serving thousands of visitors."
+            desc="The digital home of the restaurant. Designed and built to showcase the menu and atmosphere. Already served 1000+ visitors."
             stack={['Next.js', 'React', 'Tailwind']}
             link="https://www.schweinswirt-uelsen.de"
             color="#E0115F"
@@ -144,23 +144,25 @@ export default function Home() {
           <ProjectShowcase
             title="Puntcode Agency"
             cat="Web Design"
-            desc="My high-performance agency site. Showcasing boutique web design services for German local businesses."
-            stack={['Next.js', 'React', 'Tailwind']}
+            desc="My personal agency website. Offering clear and direct web design services for local businesses."
+            stack={['Next.js', 'React', 'Tailwind', 'Framer Motion']}
             link="https://puntcode.de"
             color="#F59E0B"
             align="right"
             image="/puntcode.png"
+            maskLink={true}
           />
 
           <ProjectShowcase
             title="Platzpionier"
             cat="SaaS Platform"
-            desc="A complete Reservation SaaS for restaurants. Features visual table management, CRM, and real-time availability sync. Built to scale."
-            stack={['Next.js', 'React', 'Tailwind', 'Supabase']}
+            desc="A simple, low-cost reservation SaaS for restaurants. streamlined booking management, CRM, and real-time availability sync. Built for efficiency."
+            stack={['Next.js', 'Supabase', 'Stripe', 'Tailwind']}
             link="https://app.platzpionier.com"
             color="#3b82f6"
             align="left"
             image="/platzpionier.png"
+            maskLink={true}
           />
 
           <ProjectShowcase
@@ -271,7 +273,7 @@ function TechCard({ icon, name, color }: any) {
   )
 }
 
-function ProjectShowcase({ title, cat, desc, stack, link, color, align, image, linkLabel = "View Deployment" }: any) {
+function ProjectShowcase({ title, cat, desc, stack, link, color, align, image, linkLabel = "View Deployment", maskLink = false }: any) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -308,13 +310,22 @@ function ProjectShowcase({ title, cat, desc, stack, link, color, align, image, l
 
         <div className="flex flex-wrap gap-3">
           {stack.map((t: string) => (
-            <span key={t} className="font-mono text-sm text-slate-500 border-b border-slate-800 pb-1">{t}</span>
+            <span key={t} className="font-mono text-sm text-slate-500">{t}</span>
           ))}
         </div>
 
-        <a href={link} target="_blank" className="inline-flex items-center gap-2 text-white hover:text-[#E0115F] transition-colors font-bold group">
-          {linkLabel} <ExternalLink size={16} className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
-        </a>
+        {maskLink ? (
+          <div
+            onClick={() => window.open(link, '_blank')}
+            className="inline-flex items-center gap-2 text-white hover:text-[#E0115F] transition-colors font-bold group cursor-pointer"
+          >
+            {linkLabel} <ExternalLink size={16} className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
+          </div>
+        ) : (
+          <a href={link} target="_blank" className="inline-flex items-center gap-2 text-white hover:text-[#E0115F] transition-colors font-bold group">
+            {linkLabel} <ExternalLink size={16} className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
+          </a>
+        )}
       </div>
     </motion.div>
   )
