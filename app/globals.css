@@ -36,3 +36,24 @@ body {
   color: var(--foreground);
   font-family: var(--font-mono);
 }
+
+/* Custom Scrollbar for Terminal Theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0d0d;
+  border-left: 1px solid #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff41;
+  border: 2px solid #0d0d0d;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00cc33;
+}
