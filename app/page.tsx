@@ -134,7 +134,7 @@ export default function Home() {
             title="Beim Schweinswirt"
             cat="Official Website"
             desc="The digital home of the restaurant. Designed and built to showcase the menu and atmosphere. Already served 1000+ visitors."
-            stack={['Next.js', 'React', 'Tailwind']}
+            stack={['Next.js', 'javascript', 'Tailwind']}
             link="https://www.schweinswirt-uelsen.de"
             color="#E0115F"
             align="left"
@@ -144,9 +144,8 @@ export default function Home() {
           <ProjectShowcase
             title="Puntcode Agency"
             cat="Web Design"
-            desc="My personal agency website. Offering clear and direct web design services for local businesses."
-            stack={['Next.js', 'React', 'Tailwind', 'Framer Motion']}
-            link="https://puntcode.de"
+            desc="Clean, direct web design services for local businesses. High-performance websites that sell."
+            stack={['Next.js', 'typescript', 'Tailwind', 'Framer Motion']}
             color="#F59E0B"
             align="right"
             image="/puntcode.png"
@@ -157,8 +156,7 @@ export default function Home() {
             title="Platzpionier"
             cat="SaaS Platform"
             desc="A simple, low-cost reservation SaaS for restaurants. streamlined booking management, CRM, and real-time availability sync. Built for efficiency."
-            stack={['Next.js', 'Supabase', 'Stripe', 'Tailwind']}
-            link="https://app.platzpionier.com"
+            stack={['Next.js', 'TypeScript', 'Supabase', 'Tailwind']}
             color="#3b82f6"
             align="left"
             image="/platzpionier_final.png"
