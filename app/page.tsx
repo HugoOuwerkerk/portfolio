@@ -161,7 +161,7 @@ export default function Home() {
             link="https://app.platzpionier.com"
             color="#3b82f6"
             align="left"
-            image="/platzpionier_new.png"
+            image="/platzpionier_final.png"
             maskLink={true}
           />
 
