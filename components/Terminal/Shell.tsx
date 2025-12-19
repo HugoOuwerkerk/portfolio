@@ -94,9 +94,9 @@ export default function Shell() {
                 addToHistory('output', `
 AVAILABLE COMMANDS:
   ls           List files in current directory
-  cd [dir]     Change directory (use .. to go back)
+  cd [dir]     Change directory
   cat [file]   Read file content
-  view [file]  Open file in graphic mode (New!)
+  view [file]  Open file in graphic mode
   clear        Clear screen
   open [url]   Open external URL
   whoami       Display user info
