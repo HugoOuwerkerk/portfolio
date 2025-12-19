@@ -72,7 +72,6 @@ EXPERIENCE LOG:
                     date: "2018 - 2023",
                     title: "Canisius Almelo",
                     role: "HAVO",
-                    desc: "Physics, Biology, & Tech."
                 }
             ]
         }
@@ -81,10 +80,9 @@ EXPERIENCE LOG:
         type: 'file',
         content: `
 {
-  "Core": ["TypeScript", "Next.js", "React", "Java", "Python"],
-  "Styling": ["Tailwind CSS", "Framer Motion", "CSS Modules"],
-  "Backend": ["Node.js", "PHP", "Laravel", "Supabase", "PostgreSQL"],
-  "DevOps": ["Docker", "Git", "Vercel"]
+  "Core": ["Next.js", "React", "TypeScript", "Java", "Python"],
+  "Backend & DB": ["PHP", "Laravel", "SQL", "Node.js", "Supabase"],
+  "UI & Tools": ["Tailwind", "Filament", "Framer Motion", "Git", "Docker"]
 }
 `,
         meta: {
@@ -92,10 +90,9 @@ EXPERIENCE LOG:
             title: "Kernel Modules",
             subtitle: "Tech Stack",
             details: {
-                "Core": ["TypeScript", "Next.js", "React", "Java", "Python"],
-                "Styling": ["Tailwind CSS", "Framer Motion", "CSS Modules"],
-                "Backend": ["Node.js", "PHP", "Laravel", "Supabase", "PostgreSQL", "FastAPI"],
-                "DevOps": ["Docker", "Git", "Vercel", "GitHub Actions"]
+                "Core": ["Next.js", "React", "TypeScript", "Java", "Python"],
+                "Backend & DB": ["PHP", "Laravel", "SQL", "Node.js", "Supabase"],
+                "UI & Tools": ["Tailwind", "Filament", "Framer Motion", "Git", "Docker"]
             }
         }
     },
@@ -127,7 +124,7 @@ LINKEDIN: linkedin.com/in/hugo-ouwerkerk-461125295
                 content: `
 TITLE: Platzpionier
 TYPE: SaaS Platform
-STACK: Next.js, Supabase, Tailwind
+STACK: Next.js, Supabase, Tailwind, TypeScript
 
 DESCRIPTION:
 A simple, low-cost reservation SaaS for restaurants. 
@@ -140,7 +137,6 @@ streamlined booking management, CRM, and real-time availability sync. Built for 
                     description: "A simple, low-cost reservation SaaS for restaurants. streamlined booking management, CRM, and real-time availability sync. Built for efficiency.",
                     image: "/platzpionier_final.png",
                     stack: ["Next.js", "Supabase", "Tailwind", "TypeScript"],
-                    link: "https://app.platzpionier.com", // Keeping live link as user didn't explicitly safeguard this one like the others? Wait, "same for puntcode". I'll keep this one as it WAS live.
                     details: {
                         "Role": "Solo Developer",
                         "Year": "2025",
@@ -164,8 +160,7 @@ High-performance websites that sell.
                     title: "Puntcode",
                     subtitle: "Web Design Services",
                     image: "/puntcode.png",
-                    stack: ["Next.js", "React", "TypeScript", "Tailwind", "Framer Motion"],
-                    // No link
+                    stack: ["Next.js", "TypeScript", "Tailwind", "Framer Motion"],
                     details: {
                         "Role": "Solo Developer",
                         "Year": "2025",
@@ -189,7 +184,7 @@ Serves 1000+ monthly visitors.
                     title: "Beim Schweinswirt",
                     subtitle: "Restaurant Website",
                     image: "/schweinswirt.png",
-                    stack: ["Next.js", "React", "TypeScript", "Tailwind"],
+                    stack: ["Next.js", "TypeScript", "Tailwind"],
                     link: "https://www.schweinswirt-uelsen.de",
                     details: {
                         "Role": "Solo Developer",
