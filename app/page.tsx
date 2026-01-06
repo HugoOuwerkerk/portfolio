@@ -145,21 +145,23 @@ export default function Home() {
             cat="Web Design"
             desc="The marketing website for my web design business. It serves as the main hub for offering custom, websites to local businesses."
             stack={['Next.js', 'typescript', 'Tailwind']}
+            link="https://puntcode.hah-ouw.dev/"
             color="#F59E0B"
             align="right"
             image="/puntcode.png"
-            maskLink={true}
+            linkLabel="View Website"
           />
 
           <ProjectShowcase
             title="Platzpionier"
-            cat="SaaS Platform"
+            cat="Reservation Tool"
             desc="A simple, low-cost reservation tool for restaurants. streamlined booking management, and real-time availability sync. Built for ease of use. (In Development)"
             stack={['Next.js', 'TypeScript', 'Supabase', 'Tailwind']}
+            link="https://platzpionier.hah-ouw.dev/"
             color="#3b82f6"
             align="left"
             image="/platzpionier.png"
-            maskLink={true}
+            linkLabel="View Website"
           />
 
           <ProjectShowcase
