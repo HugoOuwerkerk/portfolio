@@ -67,9 +67,9 @@ export default function Home() {
           <TimelineItem
             date="Nov 2025 - Jan 2026"
             title="Coddin"
-            role="Full Stack Intern (Backend Focus)"
-            desc="Intensive internship building production applications. Deep dive into PHP, Filament, and Laravel ecosystems."
-            tech={['PHP', 'Filament', 'Laravel', 'Livewire']}
+            role="Backend Developer"
+            desc="Backend internship focused on building applications using Laravel and Filament."
+            tech={['PHP', 'Filament', 'Laravel']}
             icon={<Terminal size={20} />}
             highlight
           />
@@ -78,8 +78,8 @@ export default function Home() {
             date="2022 - Present"
             title="Beim Schweinswirt"
             role="Kitchen Staff & Web Developer"
-            desc="Working in the kitchen (Operations/Cook Support) while simultaneously building the company's digital infrastructure, including the official website and a custom reservation system."
-            tech={['Next.js']}
+            desc="Working in the kitchen as a cook. I also built the official website and currently handle its hosting and maintenance."
+            tech={['Next.js', 'Tailwind']}
             icon={<ChefHat size={20} />}
           />
 
@@ -87,7 +87,7 @@ export default function Home() {
             date="2023 - Present"
             title="Saxion University"
             role="Associate Degree - Software Development"
-            desc="Intensive 2-year higher education (HBO). Year 1: 124+ individual assignments covering Python, SQL, Java, Docker, and Algorithms. Year 2: Team-based development and production-ready stages."
+            desc="Intensive 2-year program. I learned how to code by building real software, starting with the basics and moving to complex team projects."
             tech={[]}
             icon={<GraduationCap size={20} />}
           />
@@ -96,7 +96,6 @@ export default function Home() {
             date="2018 - 2023"
             title="Canisius Almelo"
             role="HAVO (Natuur & Techniek / Gezondheid)"
-            desc="Secondary education with a focus on Physics, Biology, and Technical Sciences."
             tech={[]}
             icon={<School size={20} />}
           />
@@ -133,7 +132,7 @@ export default function Home() {
           <ProjectShowcase
             title="Beim Schweinswirt"
             cat="Official Website"
-            desc="The digital home of the restaurant. Designed and built to showcase the menu and atmosphere. Already served 1000+ visitors."
+            desc="The official website for the restaurant. Features include the complete digital menu and a custom form for handling group events and parties."
             stack={['Next.js', 'javascript', 'Tailwind']}
             link="https://www.schweinswirt-uelsen.de"
             color="#E0115F"
@@ -142,10 +141,10 @@ export default function Home() {
           />
 
           <ProjectShowcase
-            title="Puntcode Agency"
+            title="Puntcode"
             cat="Web Design"
-            desc="Clean, direct web design services for local businesses. High-performance websites that sell."
-            stack={['Next.js', 'typescript', 'Tailwind', 'Framer Motion']}
+            desc="The marketing website for my web design business. It serves as the main hub for offering custom, websites to local businesses."
+            stack={['Next.js', 'typescript', 'Tailwind']}
             color="#F59E0B"
             align="right"
             image="/puntcode.png"
@@ -155,11 +154,11 @@ export default function Home() {
           <ProjectShowcase
             title="Platzpionier"
             cat="SaaS Platform"
-            desc="A simple, low-cost reservation SaaS for restaurants. streamlined booking management, CRM, and real-time availability sync. Built for efficiency."
+            desc="A simple, low-cost reservation tool for restaurants. streamlined booking management, and real-time availability sync. Built for ease of use. (In Development)"
             stack={['Next.js', 'TypeScript', 'Supabase', 'Tailwind']}
             color="#3b82f6"
             align="left"
-            image="/platzpionier_final.png"
+            image="/platzpionier.png"
             maskLink={true}
           />
 
@@ -172,6 +171,7 @@ export default function Home() {
             color="#E0115F"
             align="right"
             linkLabel="View GitHub"
+            image="/project_board.png"
           />
 
         </div>
@@ -259,15 +259,14 @@ function TimelineItem({ date, title, role, desc, tech, icon, highlight }: any) {
 
 function TechCard({ icon, name, color }: any) {
   return (
-    <motion.div
-      whileHover={{ scale: 1.05 }}
-      className="bg-slate-900/50 border border-slate-800 p-6 flex items-center gap-4 hover:border-[#E0115F]/50 transition-colors group"
+    <div
+      className="bg-slate-900/50 border border-slate-800 p-6 flex items-center gap-4 transition-colors group"
     >
-      <div className={`${color} group-hover:animate-pulse`}>{icon}</div>
+      <div className={`${color}`}>{icon}</div>
       <div>
         <div className="font-bold text-white">{name}</div>
       </div>
-    </motion.div>
+    </div>
   )
 }
 
@@ -282,12 +281,12 @@ function ProjectShowcase({ title, cat, desc, stack, link, color, align, image, l
       {/* Image Side */}
       <div className="w-full md:w-1/2 group relative">
         {/* Simple Glow Effect behind */}
-        <div className={`absolute -inset-1 bg-${color} rounded-lg blur opacity-20 group-hover:opacity-40 transition duration-500`}></div>
+        <div className={`absolute -inset-1 bg-${color} rounded-lg blur opacity-20 transition duration-500`}></div>
 
         {/* Image Container */}
         <div className="relative aspect-video bg-slate-900 border border-slate-800 overflow-hidden rounded-lg">
           {image ? (
-            <img src={image} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <img src={image} className="w-full h-full object-cover transition-transform duration-500" />
           ) : (
             <div className="w-full h-full flex items-center justify-center font-mono text-slate-700">NO_PREVIEW_AVAILABLE</div>
           )}
