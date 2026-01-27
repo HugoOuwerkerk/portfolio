@@ -5,13 +5,6 @@ import { Code2, Server, Database, Layers, ExternalLink, GraduationCap, Briefcase
 
 export default function Home() {
 
-  const AI_TIERS = {
-    NONE: "Hand-crafted with hot chocolate",
-    LOW: "Hand-crafted with a sprinkle of AI",
-    MEDIUM: "50% Human, 50% Hallucination",
-    ALL: "Prompt-engineered to perfection"
-  };
-
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -136,13 +129,9 @@ export default function Home() {
             </div>
             <div className="w-full md:w-2/3 space-y-6 text-lg text-slate-400 leading-relaxed">
               <p>
-                I'm Hugo — a backend-focused developer who occasionally lets AI handle the pixels. I build full-stack applications, run my own home-lab, and help local businesses get online through my side project Puntcode. When I'm not coding, you'll find me in the kitchen at Beim Schweinswirt.
+                I'm Hugo — a backend-focused developer who occasionally lets AI handle the pixels. I build full-stack applications, run my own home-lab, and help local businesses get online through my side project Puntcode. When the terminal closes, I trade the keyboard for gym weights and a stainless steel pan—unless something in my home lab decided to break.
               </p>
-              <div className="pt-4 flex gap-4 font-mono text-sm text-[#E0115F]">
-                <span>[ Linux Enthusiast ]</span>
-                <span>[ Self-Hoster ]</span>
-                <span>[ Problem Solver ]</span>
-              </div>
+
             </div>
           </div>
         </div>
@@ -179,7 +168,7 @@ export default function Home() {
               title="Beim Schweinswirt"
               desc="The official website for the restaurant. Features include the complete digital menu and a custom form for handling group events and parties."
               stack={['Next.js', 'javascript', 'Tailwind']}
-              link="https://www.schweinswirt-uelsen.de"
+              link="https://www.schweinswirt-uelsen.de/nl"
               color="#E0115F"
               align="left"
               image="/schweinswirt.png"
@@ -190,11 +179,12 @@ export default function Home() {
               title="Puntcode"
               desc="The marketing website for my web design business. It serves as the main hub for offering custom websites to local businesses. (Not yet live — waiting on tax numbers for legal pages)"
               stack={['Next.js', 'typescript', 'Tailwind']}
-              link="https://puntcode.hah-ouw.dev/"
+              link="https://puntcode.de"
               color="#E0115F"
               align="right"
               image="/puntcode.png"
               linkLabel="View Website"
+              maskLink={true}
               aiTier="MEDIUM"
             />
 
