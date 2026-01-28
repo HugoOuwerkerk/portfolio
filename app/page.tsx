@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useSpring } from "framer-motion";
-import { Code2, Server, Database, Layers, ExternalLink, GraduationCap, Briefcase, Terminal, LayoutTemplate, School, ChefHat, GitBranch, Wind, Coffee } from "lucide-react";
+import { Code2, Database, Layers, ExternalLink, GraduationCap, Terminal, School, ChefHat, GitBranch, Wind, Container, Workflow } from "lucide-react";
 
 export default function Home() {
 
@@ -44,7 +44,6 @@ export default function Home() {
             className="h-1 bg-[#E0115F] mb-6 mx-auto"
           />
           {/* Glitch Title */}
-          {/* Glitch Title */}
           <div className="glitch-wrapper mb-4">
             <h1 className="glitch text-5xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-400 to-slate-600 mix-blend-exclusion" data-text="HUGO_OUWERKERK">
               HUGO_OUWERKERK
@@ -54,7 +53,7 @@ export default function Home() {
             Software Developer
           </p>
           <div className="flex justify-center gap-4 text-sm text-slate-500">
-            <span>Based in Germany</span>
+            <span>Based in Uelsen, Germany</span>
           </div>
         </motion.div>
 
@@ -81,8 +80,9 @@ export default function Home() {
               date="Nov 2025 - Jan 2026"
               title="Coddin"
               role="Backend Developer"
-              desc="Backend internship focused on building applications using Laravel and Filament."
+              desc="Helped build the internal client and employee portals using Laravel and Filament. I also contributed to various client projects by developing backend features."
               tech={['PHP', 'Filament', 'Laravel']}
+              link="https://coddin.nl"
               icon={<Terminal size={20} />}
               highlight
             />
@@ -91,8 +91,9 @@ export default function Home() {
               date="2022 - Present"
               title="Beim Schweinswirt"
               role="Kitchen Staff & Web Developer"
-              desc="Working in the kitchen as a cook. I also built the official website and currently handle its hosting and maintenance."
+              desc="Working in the kitchen as part of the cooking staff. I also built the official website and currently handle its hosting and maintenance."
               tech={['Next.js', 'Tailwind']}
+              link="https://schweinswirt-uelsen.de"
               icon={<ChefHat size={20} />}
             />
 
@@ -100,8 +101,9 @@ export default function Home() {
               date="2023 - Present"
               title="Saxion University"
               role="Associate Degree - Software Development"
-              desc="Intensive 2-year program. I learned how to code by building real software, starting with the basics and moving to complex team projects."
+              desc="Intensive 2-year Associate Degree focused on modern software engineering. Covered the full development lifecycle—from system design and data structures to DevOps and team-based implementation."
               tech={[]}
+              link="https://sd42.nl/"
               icon={<GraduationCap size={20} />}
             />
 
@@ -110,6 +112,7 @@ export default function Home() {
               title="Canisius Almelo"
               role="HAVO (Natuur & Techniek / Gezondheid)"
               tech={[]}
+              link="https://canisius.nl/"
               icon={<School size={20} />}
             />
 
@@ -129,7 +132,7 @@ export default function Home() {
             </div>
             <div className="w-full md:w-2/3 space-y-6 text-lg text-slate-400 leading-relaxed">
               <p>
-                I'm Hugo — a backend-focused developer who occasionally lets AI handle the pixels. I build full-stack applications, run my own home-lab, and help local businesses get online through my side project Puntcode. When the terminal closes, I trade the keyboard for gym weights and a stainless steel pan—unless something in my home lab decided to break.
+                I'm Hugo — a backend developer who occasionally lets AI handle the pixels. I'm in the early stages of building Puntcode to get local businesses online. In my free time, I like to cook, lift weights, and travel to places most people don't go.
               </p>
 
             </div>
@@ -143,16 +146,16 @@ export default function Home() {
           <SectionTitle title="KERNEL_MODULES" subtitle="Tech Stack" />
 
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            <TechCard icon={<Code2 />} name="Next.js" color="text-white" />
-            <TechCard icon={<Code2 />} name="TypeScript" color="text-[#3178C6]" />
-            <TechCard icon={<Wind />} name="Tailwind" color="text-[#06B6D4]" />
             <TechCard icon={<Terminal />} name="PHP" color="text-[#777BB4]" />
-            <TechCard icon={<Layers />} name="Laravel" color="text-[#FF2D20]" />
-            <TechCard icon={<LayoutTemplate />} name="Filament" color="text-[#FA7C43]" />
-            <TechCard icon={<Coffee />} name="Java" color="text-[#ED8B00]" />
             <TechCard icon={<Code2 />} name="Python" color="text-[#3776AB]" />
-            <TechCard icon={<Database />} name="SQL" color="text-[#00BCF2]" />
+            <TechCard icon={<Code2 />} name="TypeScript" color="text-[#3178C6]" />
+            <TechCard icon={<Layers />} name="Laravel" color="text-[#FF2D20]" />
+            <TechCard icon={<Code2 />} name="Next.js" color="text-white" />
+            <TechCard icon={<Wind />} name="Tailwind" color="text-[#06B6D4]" />
             <TechCard icon={<GitBranch />} name="Git" color="text-[#F05032]" />
+            <TechCard icon={<Container />} name="Docker" color="text-[#2496ED]" />
+            <TechCard icon={<Database />} name="SQL" color="text-[#00BCF2]" />
+            <TechCard icon={<Workflow />} name="n8n" color="text-[#FF6D5A]" />
           </div>
         </div>
       </section>
@@ -167,7 +170,7 @@ export default function Home() {
             <ProjectShowcase
               title="Beim Schweinswirt"
               desc="The official website for the restaurant. Features include the complete digital menu and a custom form for handling group events and parties."
-              stack={['Next.js', 'javascript', 'Tailwind']}
+              stack={['React', 'Vite', 'Tailwind']}
               link="https://www.schweinswirt-uelsen.de/nl"
               color="#E0115F"
               align="left"
@@ -177,7 +180,7 @@ export default function Home() {
 
             <ProjectShowcase
               title="Puntcode"
-              desc="The marketing website for my web design business. It serves as the main hub for offering custom websites to local businesses. (Not yet live — waiting on tax numbers for legal pages)"
+              desc="The marketing website for my web design business. It serves as the main hub for offering custom websites to local businesses. (Pre-launch, Finalizing regulatory requirements)"
               stack={['Next.js', 'typescript', 'Tailwind']}
               link="https://puntcode.de"
               color="#E0115F"
@@ -190,12 +193,11 @@ export default function Home() {
 
             <ProjectShowcase
               title="PuntAdmin"
-              desc="An internal system for managing clients, websites, and all the money stuff. It handles everything from MRR tracking to generating German-compliant PDF invoices so I don't have to. (Currently in active development)"
+              desc="An internal system for managing clients, websites, and all the money stuff. It handles everything from MRR tracking to generating German-compliant PDF invoices so I don't have to. (In development)"
               stack={['Python', 'CustomTkinter', 'FastAPI', 'SQLite']}
               link="#"
               color="#E0115F"
               align="left"
-              image="/puntadmin.png"
               linkLabel="Internal Tool"
               maskLink={true}
               aiTier="ALL"
@@ -203,7 +205,7 @@ export default function Home() {
 
             <ProjectShowcase
               title="PuntFlow"
-              desc="My personal lead discovery engine. It uses AI to scout Google Maps for businesses with outdated websites, scores them using Gemini, and automates the entire outreach workflow."
+              desc="Automated lead discovery engine. It uses AI to scout Google Maps for businesses with outdated websites, scores them using Gemini, and automates the entire outreach workflow."
               stack={['Next.js', 'TypeScript', 'Prisma', 'n8n', 'Gemini']}
               link="https://github.com/HugoOuwerkerk/PuntFlow"
               color="#E0115F"
@@ -215,29 +217,30 @@ export default function Home() {
             />
 
             <ProjectShowcase
+              title="ProjectBoard"
+              desc="A minimal self-hosted project manager to organize projects, tasks, and notes involved in the development lifecycle. Built with SvelteKit and FastAPI, running in Docker. (Self-hosted at home, using it daily for my own projects)"
+              stack={['SvelteKit', 'FastAPI', 'Docker', 'SQLite']}
+              link="https://github.com/HugoOuwerkerk/ProjectBoard"
+              color="#E0115F"
+              align="left"
+              linkLabel="View GitHub"
+              image="/project_board.png"
+              aiTier="LOW"
+            />
+
+            <ProjectShowcase
               title="Platzpionier"
-              desc="A simple, low-cost reservation tool for restaurants with streamlined booking management. (Legacy Project - Awesome idea, but navigating German regulations is a full-time job)"
+              desc="A simple, low-cost reservation tool that provides restaurants with an embeddable booking widget for their website. (Shelved, Regulatory liability was too high for a solo operation)"
               stack={['Next.js', 'TypeScript', 'Supabase', 'Tailwind']}
               link="https://github.com/HugoOuwerkerk/Platzpionier"
               color="#E0115F"
-              align="left"
+              align="right"
               image="/platzpionier.png"
               linkLabel="View GitHub"
               maskLink={true}
               aiTier="ALL"
             />
 
-            <ProjectShowcase
-              title="ProjectBoard"
-              desc="A minimal self-hosted project manager to organize projects, tasks, and notes involved in the development lifecycle. Built with SvelteKit and FastAPI, running in Docker. (Self-hosted at home — using it daily for my own projects)"
-              stack={['SvelteKit', 'FastAPI', 'Docker', 'SQLite']}
-              link="https://github.com/HugoOuwerkerk/ProjectBoard"
-              color="#E0115F"
-              align="right"
-              linkLabel="View GitHub"
-              image="/project_board.png"
-              aiTier="LOW"
-            />
 
 
           </div>
@@ -256,20 +259,20 @@ export default function Home() {
         </p>
 
         <div className="flex flex-col md:flex-row justify-center gap-6 mb-12">
-          <a href="mailto:hah.ouwerkerk@outlook.com" className="flex items-center gap-2 justify-center text-white hover:text-[#E0115F] transition-colors group">
-            <span className="font-mono group-hover:underline decoration-[#E0115F]">hah.ouwerkerk@outlook.com</span>
+          <a href="mailto:hah.ouwerkerk@outlook.com" className="flex items-center gap-2 justify-center text-white hover:text-[#E0115F] transition-all duration-300 ease-in-out group">
+            <span className="font-mono">hah.ouwerkerk@outlook.com</span>
           </a>
           <span className="hidden md:inline text-[#E0115F]">///</span>
-          <a href="tel:+310621232450" className="flex items-center gap-2 justify-center text-white hover:text-[#E0115F] transition-colors group">
-            <span className="font-mono group-hover:underline decoration-[#E0115F]">+31 06 21 23 24 50</span>
+          <a href="tel:+310621232450" className="flex items-center gap-2 justify-center text-white hover:text-[#E0115F] transition-all duration-300 ease-in-out group">
+            <span className="font-mono">+31 06 21 23 24 50</span>
           </a>
           <span className="hidden md:inline text-[#E0115F]">///</span>
-          <a href="https://github.com/HugoOuwerkerk" target="_blank" className="flex items-center gap-2 justify-center text-white hover:text-[#E0115F] transition-colors group">
-            <span className="font-mono group-hover:underline decoration-[#E0115F]">GitHub</span>
+          <a href="https://github.com/HugoOuwerkerk" target="_blank" className="flex items-center gap-2 justify-center text-white hover:text-[#E0115F] transition-all duration-300 ease-in-out group">
+            <span className="font-mono">GitHub</span>
           </a>
           <span className="hidden md:inline text-[#E0115F]">///</span>
-          <a href="https://www.linkedin.com/in/hugo-ouwerkerk-461125295/" target="_blank" className="flex items-center gap-2 justify-center text-white hover:text-[#E0115F] transition-colors group">
-            <span className="font-mono group-hover:underline decoration-[#E0115F]">LinkedIn</span>
+          <a href="https://www.linkedin.com/in/hugo-ouwerkerk-461125295/" target="_blank" className="flex items-center gap-2 justify-center text-white hover:text-[#E0115F] transition-all duration-300 ease-in-out group">
+            <span className="font-mono">LinkedIn</span>
           </a>
         </div>
       </section>
@@ -286,7 +289,18 @@ function SectionTitle({ title, subtitle }: any) {
   )
 }
 
-function TimelineItem({ date, title, role, desc, tech, icon, highlight }: any) {
+interface TimelineItemProps {
+  date: string;
+  title: string;
+  role: string;
+  desc?: string;
+  tech: string[];
+  icon: React.ReactNode;
+  highlight?: boolean;
+  link?: string;
+}
+
+function TimelineItem({ date, title, role, desc, tech, icon, highlight, link }: TimelineItemProps) {
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
@@ -294,36 +308,54 @@ function TimelineItem({ date, title, role, desc, tech, icon, highlight }: any) {
       viewport={{ once: true, margin: "-100px" }}
       className="relative pl-8 md:pl-12"
     >
-      {/* Dot on line */}
-      <div className={`absolute -left-[9px] top-0 w-4 h-4 rounded-full border-4 border-[#050505] ${highlight ? 'bg-[#E0115F]' : 'bg-slate-700'}`} />
+      {/* Icon on line */}
+      <div className={`absolute -left-[21px] top-0 w-10 h-10 rounded-full border-4 border-[#050505] flex items-center justify-center transition-colors ${highlight ? 'bg-[#E0115F] text-white' : 'bg-slate-800 text-slate-400 group-hover:bg-slate-700'}`}>
+        {icon}
+      </div>
 
       <div className="flex flex-col md:flex-row gap-4 mb-2">
         <span className="font-mono text-[#E0115F] text-sm pt-1">{date}</span>
         <div>
           <h3 className="text-2xl font-bold text-white flex items-center gap-2">
-            {title}
+            {link ? (
+              <a href={link} target="_blank" className="hover:text-[#E0115F] transition-all duration-300 ease-in-out flex items-center gap-2">
+                {title}
+                <ExternalLink size={18} className="opacity-50 hover:opacity-100 transition-opacity" />
+              </a>
+            ) : (
+              title
+            )}
             {highlight && <span className="text-[10px] bg-[#E0115F] text-white px-2 py-0.5 rounded-full">INTERN</span>}
           </h3>
           <div className="text-slate-400 font-mono text-sm mb-4">{role}</div>
         </div>
-      </div>
+      </div >
 
-      <p className="text-slate-400 max-w-2xl mb-4 leading-relaxed">{desc}</p>
+      {desc && <p className="text-slate-400 max-w-2xl mb-4 leading-relaxed">{desc}</p>
+      }
 
-      {tech && tech.length > 0 && (
-        <div className="flex flex-wrap gap-2">
-          {tech.map((t: string) => (
-            <span key={t} className="px-2 py-1 bg-slate-900 border border-slate-800 text-xs text-slate-300 rounded font-mono">
-              {t}
-            </span>
-          ))}
-        </div>
-      )}
-    </motion.div>
+      {
+        tech && tech.length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            {tech.map((t: string) => (
+              <span key={t} className="px-2 py-1 bg-slate-900 border border-slate-800 text-xs text-slate-300 rounded font-mono">
+                {t}
+              </span>
+            ))}
+          </div>
+        )
+      }
+    </motion.div >
   )
 }
 
-function TechCard({ icon, name, color }: any) {
+interface TechCardProps {
+  icon: React.ReactNode;
+  name: string;
+  color: string;
+}
+
+function TechCard({ icon, name, color }: TechCardProps) {
   return (
     <div
       className="bg-slate-900/50 border border-slate-800 p-6 flex items-center gap-4 transition-colors group"
@@ -336,7 +368,20 @@ function TechCard({ icon, name, color }: any) {
   )
 }
 
-function ProjectShowcase({ title, desc, stack, link, color, align, image, linkLabel = "View Deployment", maskLink = false, aiTier }: any) {
+interface ProjectShowcaseProps {
+  title: string;
+  desc: string;
+  stack: string[];
+  link: string;
+  color: string;
+  align: 'left' | 'right';
+  image?: string;
+  linkLabel?: string;
+  maskLink?: boolean;
+  aiTier?: 'NONE' | 'LOW' | 'MEDIUM' | 'ALL';
+}
+
+function ProjectShowcase({ title, desc, stack, link, color, align, image, linkLabel = "View Deployment", maskLink = false, aiTier }: ProjectShowcaseProps) {
 
   const AI_TIERS: any = {
     NONE: "Hand-crafted with hot chocolate",
@@ -360,7 +405,7 @@ function ProjectShowcase({ title, desc, stack, link, color, align, image, linkLa
         {/* Image Container */}
         <div className="aspect-[16/9] overflow-hidden rounded-xl">
           {image ? (
-            <img src={image} className="w-full h-full object-cover object-top" />
+            <img src={image} alt={title} className="w-full h-full object-cover object-top" />
           ) : (
             <div className="w-full h-full flex items-center justify-center font-mono text-slate-700">NO_PREVIEW_AVAILABLE</div>
           )}

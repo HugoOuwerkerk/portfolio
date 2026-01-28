@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Hugo Ouwerkerk - Software Developer",
-  description: "Personal portfolio of Hugo Ouwerkerk. Software Developer based in Halle, Germany.",
+  description: "Personal portfolio of Hugo Ouwerkerk. Software Developer based in Uelsen, Germany.",
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
