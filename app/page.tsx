@@ -15,17 +15,14 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#050505] text-slate-200 overflow-x-hidden selection:bg-[#E0115F] selection:text-white font-mono">
 
-      {/* Scroll Progress Bar */}
+      {/* Scroll Bar */}
       <motion.div className="fixed top-0 left-0 right-0 h-1 bg-[#E0115F] origin-left z-50" style={{ scaleX }} />
 
-      {/* Fixed Server Status Badge */}
+      {/* Server Status Badge */}
       <div className="fixed bottom-6 right-6 z-50 hidden md:flex items-center gap-2 bg-[#050505]/80 backdrop-blur border border-slate-800 px-4 py-2 rounded-full text-xs font-mono text-slate-500">
         <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
         <span>SELF_HOSTED</span>
       </div>
-
-      {/* Grid Background */}
-      <div className="fixed inset-0 bg-[linear-gradient(rgba(224,17,95,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(224,17,95,0.03)_1px,transparent_1px)] bg-[size:30px_30px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_20%,transparent_100%)] pointer-events-none -z-10" />
 
       {/* HERO SECTION */}
       <section className="min-h-[80vh] flex flex-col justify-center items-center relative px-6 md:h-screen">
@@ -43,7 +40,7 @@ export default function Home() {
             transition={{ duration: 1.5, delay: 0.5 }}
             className="h-1 bg-[#E0115F] mb-6 mx-auto"
           />
-          {/* Glitch Title */}
+          {/* Glitch Text */}
           <div className="glitch-wrapper mb-4">
             <h1 className="glitch text-3xl md:text-6xl lg:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-400 to-slate-600 mix-blend-exclusion" data-text="HUGO_OUWERKERK">
               HUGO_OUWERKERK
@@ -68,7 +65,7 @@ export default function Home() {
 
 
 
-      {/* EXPERIENCE TIMELINE */}
+      {/* EXPERIENCE TIMELINE TODO: split up in 2/3 parts (education, work coding, work other)*/}
       <section className="relative z-10 bg-[#050505] py-10 md:py-32 px-6">
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#050505] -mt-32 pointer-events-none" />
         <div className="max-w-6xl mx-auto">
@@ -120,7 +117,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ABOUT ME SECTION */}
+      {/* ABOUT ME */}
       <section className="relative z-10 bg-[#050505] py-10 md:py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <SectionTitle title="USER_PROFILE" subtitle="About Me" />
@@ -140,7 +137,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TECH STACK GRID */}
+      {/* TECH STACK */}
       <section className="relative z-10 bg-[#050505] py-10 md:py-32 pt-8 md:pt-12 px-6">
         <div className="max-w-6xl mx-auto">
           <SectionTitle title="KERNEL_MODULES" subtitle="Tech Stack" />
@@ -160,7 +157,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PROJECTS SECTION */}
+      {/* PROJECTS */}
       <section className="relative z-10 bg-[#050505] py-10 md:py-32 px-6">
         <div className="max-w-6xl mx-auto">
           <SectionTitle title="EXECUTABLES" subtitle="Selected Projects" />
@@ -181,8 +178,8 @@ export default function Home() {
             <ProjectShowcase
               title="Puntcode"
               desc="The marketing website for my web design business. It serves as the main hub for offering custom websites to local businesses. (Pre-launch, Finalizing regulatory requirements)"
-              stack={['Next.js', 'typescript', 'Tailwind']}
-              link="https://puntcode.de"
+              stack={['Next.js', 'TypeScript', 'Tailwind']}
+              link="#"
               color="#E0115F"
               align="right"
               image="/puntcode.png"
@@ -195,7 +192,7 @@ export default function Home() {
               title="PuntAdmin"
               desc="An internal system for managing clients, websites, and all the money stuff. It handles everything from MRR tracking to generating German-compliant PDF invoices so I don't have to. (In development)"
               stack={['Python', 'CustomTkinter', 'FastAPI', 'SQLite']}
-              link="#"
+              link="https://github.com/HugoOuwerkerk/PuntAdmin"
               color="#E0115F"
               align="left"
               linkLabel="Internal Tool"
@@ -407,10 +404,8 @@ function ProjectShowcase({ title, desc, stack, link, color, align, image, linkLa
     >
       {/* Image Side */}
       <div className="w-full md:w-[60%] group relative">
-        {/* Simple Glow Effect behind */}
-        <div className={`absolute -inset-1 bg-${color} rounded-lg blur opacity-10 transition duration-500`}></div>
 
-        {/* Image Container */}
+        {/* Image */}
         <div className="aspect-[16/9] overflow-hidden rounded-xl">
           {image ? (
             <img src={image} alt={title} className="w-full h-full object-cover object-top" />
@@ -420,7 +415,7 @@ function ProjectShowcase({ title, desc, stack, link, color, align, image, linkLa
         </div>
       </div>
 
-      {/* Content Side */}
+      {/* Content */}
       <div className="w-full md:w-[40%] space-y-8">
         <div>
           <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">{title}</h3>
