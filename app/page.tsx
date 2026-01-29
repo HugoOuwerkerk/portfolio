@@ -25,7 +25,7 @@ export default function Home() {
       </div>
 
       {/* HERO SECTION */}
-      <section className="min-h-[80vh] flex flex-col justify-center items-center relative px-6 md:h-screen">
+      <section className="min-h-[100dvh] flex flex-col justify-center items-center relative px-6 md:h-screen">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/50 to-[#050505] pointer-events-none" />
 
         <motion.div
