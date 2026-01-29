@@ -129,7 +129,7 @@ export default function Home() {
             </div>
             <div className="w-full md:w-2/3 space-y-6 text-lg text-slate-400 leading-relaxed">
               <p>
-                I'm Hugo — a backend developer who occasionally lets AI handle the pixels. I'm in the early stages of building Puntcode to get local businesses online. In my free time, I like to cook, lift weights, and travel to places most people don't go.
+                I'm Hugo, a backend developer who occasionally lets AI handle the pixels. I'm in the early stages of building Puntcode to get local businesses online. In my free time, I like to cook, lift weights, and travel to places most people don't go.
               </p>
 
             </div>
