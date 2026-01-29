@@ -28,7 +28,7 @@ export default function Home() {
       <div className="fixed inset-0 bg-[linear-gradient(rgba(224,17,95,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(224,17,95,0.03)_1px,transparent_1px)] bg-[size:30px_30px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_20%,transparent_100%)] pointer-events-none -z-10" />
 
       {/* HERO SECTION */}
-      <section className="h-screen flex flex-col justify-center items-center relative px-6">
+      <section className="min-h-[80vh] flex flex-col justify-center items-center relative px-6 md:h-screen">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/50 to-[#050505] pointer-events-none" />
 
         <motion.div
@@ -45,7 +45,7 @@ export default function Home() {
           />
           {/* Glitch Title */}
           <div className="glitch-wrapper mb-4">
-            <h1 className="glitch text-5xl md:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-400 to-slate-600 mix-blend-exclusion" data-text="HUGO_OUWERKERK">
+            <h1 className="glitch text-3xl md:text-6xl lg:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-400 to-slate-600 mix-blend-exclusion" data-text="HUGO_OUWERKERK">
               HUGO_OUWERKERK
             </h1>
           </div>
@@ -69,12 +69,12 @@ export default function Home() {
 
 
       {/* EXPERIENCE TIMELINE */}
-      <section className="relative z-10 bg-[#050505] py-32 px-6">
+      <section className="relative z-10 bg-[#050505] py-10 md:py-32 px-6">
         <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#050505] -mt-32 pointer-events-none" />
         <div className="max-w-6xl mx-auto">
           <SectionTitle title="SYSTEM_LOGS" subtitle="Experience & Education" />
 
-          <div className="relative border-l-2 border-slate-800 ml-4 md:ml-12 space-y-16">
+          <div className="relative border-l-2 border-slate-800 ml-2 md:ml-12 space-y-16">
 
             <TimelineItem
               date="Nov 2025 - Jan 2026"
@@ -121,7 +121,7 @@ export default function Home() {
       </section>
 
       {/* ABOUT ME SECTION */}
-      <section className="relative z-10 bg-[#050505] py-20 px-6">
+      <section className="relative z-10 bg-[#050505] py-10 md:py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <SectionTitle title="USER_PROFILE" subtitle="About Me" />
           <div className="flex flex-col md:flex-row gap-12 items-center">
@@ -141,11 +141,11 @@ export default function Home() {
       </section>
 
       {/* TECH STACK GRID */}
-      <section className="relative z-10 bg-[#050505] py-32 pt-12">
+      <section className="relative z-10 bg-[#050505] py-10 md:py-32 pt-8 md:pt-12 px-6">
         <div className="max-w-6xl mx-auto">
           <SectionTitle title="KERNEL_MODULES" subtitle="Tech Stack" />
 
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4">
             <TechCard icon={<Terminal />} name="PHP" color="text-[#777BB4]" />
             <TechCard icon={<Code2 />} name="Python" color="text-[#3776AB]" />
             <TechCard icon={<Code2 />} name="TypeScript" color="text-[#3178C6]" />
@@ -161,11 +161,11 @@ export default function Home() {
       </section>
 
       {/* PROJECTS SECTION */}
-      <section className="relative z-10 bg-[#050505] py-32 px-6">
+      <section className="relative z-10 bg-[#050505] py-10 md:py-32 px-6">
         <div className="max-w-6xl mx-auto">
           <SectionTitle title="EXECUTABLES" subtitle="Selected Projects" />
 
-          <div className="space-y-32">
+          <div className="space-y-20 md:space-y-32">
 
             <ProjectShowcase
               title="Beim Schweinswirt"
@@ -248,32 +248,40 @@ export default function Home() {
       </section>
 
       {/* CONTACT */}
-      <section className="py-32 text-center">
-        <h2 className="text-4xl font-bold mb-8">
+      <section className="py-10 md:py-32 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8">
           <span className="text-[#E0115F] mr-2">&gt;</span>
-          Initialize Connection
+          Get In Touch
           <span className="text-[#E0115F] animate-pulse">_</span>
         </h2>
         <p className="text-slate-400 mb-8 max-w-xl mx-auto">
           Based in Uelsen, Germany. 0% cloud. 100% self-hosted.
         </p>
 
-        <div className="flex flex-col md:flex-row justify-center gap-6 mb-12">
-          <a href="mailto:hah.ouwerkerk@outlook.com" className="flex items-center gap-2 justify-center text-white hover:text-[#E0115F] transition-all duration-300 ease-in-out group">
-            <span className="font-mono">hah.ouwerkerk@outlook.com</span>
-          </a>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mb-8 md:mb-12">
+          {/* Contact Group */}
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
+            <a href="mailto:hah.ouwerkerk@outlook.com" className="flex items-center gap-2 justify-center text-white hover:text-[#E0115F] transition-all duration-300 ease-in-out group">
+              <span className="font-mono">hah.ouwerkerk@outlook.com</span>
+            </a>
+            <span className="hidden md:inline text-[#E0115F]">///</span>
+            <a href="tel:+310621232450" className="flex items-center gap-2 justify-center text-white hover:text-[#E0115F] transition-all duration-300 ease-in-out group">
+              <span className="font-mono">+31 06 21 23 24 50</span>
+            </a>
+          </div>
+
           <span className="hidden md:inline text-[#E0115F]">///</span>
-          <a href="tel:+310621232450" className="flex items-center gap-2 justify-center text-white hover:text-[#E0115F] transition-all duration-300 ease-in-out group">
-            <span className="font-mono">+31 06 21 23 24 50</span>
-          </a>
-          <span className="hidden md:inline text-[#E0115F]">///</span>
-          <a href="https://github.com/HugoOuwerkerk" target="_blank" className="flex items-center gap-2 justify-center text-white hover:text-[#E0115F] transition-all duration-300 ease-in-out group">
-            <span className="font-mono">GitHub</span>
-          </a>
-          <span className="hidden md:inline text-[#E0115F]">///</span>
-          <a href="https://www.linkedin.com/in/hugo-ouwerkerk-461125295/" target="_blank" className="flex items-center gap-2 justify-center text-white hover:text-[#E0115F] transition-all duration-300 ease-in-out group">
-            <span className="font-mono">LinkedIn</span>
-          </a>
+
+          {/* Social Group (Side by Side on Mobile) */}
+          <div className="flex items-center gap-6">
+            <a href="https://github.com/HugoOuwerkerk" target="_blank" className="flex items-center gap-2 justify-center text-white hover:text-[#E0115F] transition-all duration-300 ease-in-out group">
+              <span className="font-mono">GitHub</span>
+            </a>
+            <span className="hidden md:inline text-[#E0115F]">///</span>
+            <a href="https://www.linkedin.com/in/hugo-ouwerkerk-461125295/" target="_blank" className="flex items-center gap-2 justify-center text-white hover:text-[#E0115F] transition-all duration-300 ease-in-out group">
+              <span className="font-mono">LinkedIn</span>
+            </a>
+          </div>
         </div>
       </section>
 
@@ -283,7 +291,7 @@ export default function Home() {
 
 function SectionTitle({ title, subtitle }: any) {
   return (
-    <div className="mb-16">
+    <div className="mb-10 md:mb-16">
       <div className="text-4xl md:text-5xl font-bold text-white">{subtitle}</div>
     </div>
   )
@@ -358,7 +366,7 @@ interface TechCardProps {
 function TechCard({ icon, name, color }: TechCardProps) {
   return (
     <div
-      className="bg-slate-900/50 border border-slate-800 p-6 flex items-center gap-4 transition-colors group"
+      className="bg-slate-900/50 border border-slate-800 p-4 md:p-6 flex items-center gap-4 transition-colors group"
     >
       <div className={`${color}`}>{icon}</div>
       <div>
@@ -395,7 +403,7 @@ function ProjectShowcase({ title, desc, stack, link, color, align, image, linkLa
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
-      className={`flex flex-col ${align === 'right' ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center w-full`}
+      className={`flex flex-col ${align === 'right' ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 md:gap-12 items-center w-full`}
     >
       {/* Image Side */}
       <div className="w-full md:w-[60%] group relative">
@@ -415,7 +423,7 @@ function ProjectShowcase({ title, desc, stack, link, color, align, image, linkLa
       {/* Content Side */}
       <div className="w-full md:w-[40%] space-y-8">
         <div>
-          <h3 className="text-4xl font-bold text-white mb-2">{title}</h3>
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">{title}</h3>
 
           {aiTier && (
             <div className="font-mono text-[10px] md:text-xs text-[#E0115F]/80 mb-2">
