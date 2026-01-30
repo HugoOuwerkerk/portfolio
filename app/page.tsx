@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useSpring } from "framer-motion";
 import { Code2, Database, Layers, ExternalLink, GraduationCap, Terminal, School, ChefHat, GitBranch, Wind, Container, Workflow } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
 
@@ -118,7 +119,7 @@ export default function Home() {
       </section>
 
       {/* ABOUT ME */}
-      <section className="relative z-10 bg-[#050505] py-10 md:py-20 px-6">
+      <section id="about" className="relative z-10 bg-[#050505] py-10 md:py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <SectionTitle title="USER_PROFILE" subtitle="About Me" />
           <div className="flex flex-col md:flex-row gap-12 items-center">
@@ -129,7 +130,7 @@ export default function Home() {
             </div>
             <div className="w-full md:w-2/3 space-y-6 text-lg text-slate-400 leading-relaxed">
               <p>
-                I'm Hugo, a backend developer who occasionally lets AI handle the pixels. I'm in the early stages of building Puntcode to get local businesses online. In my free time, I like to cook, lift weights, and travel to places most people don't go.
+                I'm Hugo, a backend developer who occasionally lets AI handle the pixels. I'm in the early stages of building Puntcode to get local businesses online. In my free time, I like to cook, <Link href="/personal" className="text-[#E0115F] underline underline-offset-4 decoration-[#E0115F]/30 hover:decoration-[#E0115F] transition-colors">lift weights</Link>, and <Link href="/personal" className="text-[#E0115F] underline underline-offset-4 decoration-[#E0115F]/30 hover:decoration-[#E0115F] transition-colors">travel</Link> to places most people don't go.
               </p>
 
             </div>
@@ -160,7 +161,7 @@ export default function Home() {
       {/* PROJECTS */}
       <section className="relative z-10 bg-[#050505] py-10 md:py-32 px-6">
         <div className="max-w-6xl mx-auto">
-          <SectionTitle title="EXECUTABLES" subtitle="Selected Projects" />
+          <SectionTitle title="EXECUTABLES" subtitle="My Projects" />
 
           <div className="space-y-20 md:space-y-32">
 
