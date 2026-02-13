@@ -190,24 +190,12 @@ export default function Home() {
             />
 
             <ProjectShowcase
-              title="PuntAdmin"
-              desc="An internal system for managing clients, websites, and all the money stuff. It handles everything from MRR tracking to generating German-compliant PDF invoices so I don't have to. (In development)"
-              stack={['Python', 'CustomTkinter', 'FastAPI', 'SQLite']}
-              link="https://github.com/HugoOuwerkerk/PuntAdmin"
-              color="#E0115F"
-              align="left"
-              linkLabel="Internal Tool"
-              maskLink={true}
-              aiTier="ALL"
-            />
-
-            <ProjectShowcase
               title="PuntFlow"
               desc="Automated lead discovery engine. It uses AI to scout Google Maps for businesses with outdated websites, scores them using Gemini, and automates the entire outreach workflow."
               stack={['Next.js', 'TypeScript', 'Prisma', 'n8n', 'Gemini']}
               link="https://github.com/HugoOuwerkerk/PuntFlow"
               color="#E0115F"
-              align="right"
+              align="left"
               image="/puntflow.png"
               linkLabel="View GitHub"
               maskLink={true}
@@ -220,7 +208,7 @@ export default function Home() {
               stack={['SvelteKit', 'FastAPI', 'Docker', 'SQLite']}
               link="https://github.com/HugoOuwerkerk/ProjectBoard"
               color="#E0115F"
-              align="left"
+              align="right"
               linkLabel="View GitHub"
               image="/project_board.png"
               aiTier="LOW"
@@ -232,7 +220,7 @@ export default function Home() {
               stack={['Next.js', 'TypeScript', 'Supabase', 'Tailwind']}
               link="https://github.com/HugoOuwerkerk/Platzpionier"
               color="#E0115F"
-              align="right"
+              align="left"
               image="/platzpionier.png"
               linkLabel="View GitHub"
               maskLink={true}
@@ -257,7 +245,6 @@ export default function Home() {
         </p>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mb-8 md:mb-12">
-          {/* Contact Group */}
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
             <a href="mailto:hah.ouwerkerk@outlook.com" className="flex items-center gap-2 justify-center text-white hover:text-[#E0115F] transition-all duration-300 ease-in-out group">
               <span className="font-mono">hah.ouwerkerk@outlook.com</span>
@@ -270,7 +257,6 @@ export default function Home() {
 
           <span className="hidden md:inline text-[#E0115F]">///</span>
 
-          {/* Social Group (Side by Side on Mobile) */}
           <div className="flex items-center gap-6">
             <a href="https://github.com/HugoOuwerkerk" target="_blank" className="flex items-center gap-2 justify-center text-white hover:text-[#E0115F] transition-all duration-300 ease-in-out group">
               <span className="font-mono">GitHub</span>
@@ -405,8 +391,6 @@ function ProjectShowcase({ title, desc, stack, link, color, align, image, linkLa
     >
       {/* Image Side */}
       <div className="w-full md:w-[60%] group relative">
-
-        {/* Image */}
         <div className="aspect-[16/9] overflow-hidden rounded-xl">
           {image ? (
             <img src={image} alt={title} className="w-full h-full object-cover object-top" />
