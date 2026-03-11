@@ -75,6 +75,17 @@ export default function Home() {
           <div className="relative border-l-2 border-slate-800 ml-2 md:ml-12 space-y-16">
 
             <TimelineItem
+              date="2026 - Present"
+              title="Emmedy Learning Solutions"
+              role="Full Stack Developer"
+              desc="Working as a Full Stack Developer on a comprehensive Learning Management System (LMS). Developing features that help businesses efficiently schedule, deliver, and track employee training courses."
+              tech={['PHP', 'Symfony', 'Twig']}
+              link="https://emmedy.nl"
+              icon={<Terminal size={20} />}
+              highlight
+            />
+
+            <TimelineItem
               date="Nov 2025 - Jan 2026"
               title="Coddin"
               role="Backend Developer"
@@ -153,7 +164,7 @@ export default function Home() {
             <TechCard icon={<GitBranch />} name="Git" color="text-[#F05032]" />
             <TechCard icon={<Container />} name="Docker" color="text-[#2496ED]" />
             <TechCard icon={<Database />} name="SQL" color="text-[#00BCF2]" />
-            <TechCard icon={<Workflow />} name="n8n" color="text-[#FF6D5A]" />
+            <TechCard icon={<Code2 />} name="Astro" color="text-[#FF5D01]" />
           </div>
         </div>
       </section>
@@ -190,25 +201,12 @@ export default function Home() {
             />
 
             <ProjectShowcase
-              title="PuntFlow"
-              desc="Automated lead discovery engine. It uses AI to scout Google Maps for businesses with outdated websites, scores them using Gemini, and automates the entire outreach workflow."
-              stack={['Next.js', 'TypeScript', 'Prisma', 'n8n', 'Gemini']}
-              link="https://github.com/HugoOuwerkerk/PuntFlow"
-              color="#E0115F"
-              align="left"
-              image="/puntflow.png"
-              linkLabel="View GitHub"
-              maskLink={true}
-              aiTier="ALL"
-            />
-
-            <ProjectShowcase
               title="ProjectBoard"
               desc="A minimal self-hosted project manager to organize projects, tasks, and notes involved in the development lifecycle. Built with SvelteKit and FastAPI, running in Docker. (Self-hosted at home, using it daily for my own projects)"
               stack={['SvelteKit', 'FastAPI', 'Docker', 'SQLite']}
               link="https://github.com/HugoOuwerkerk/ProjectBoard"
               color="#E0115F"
-              align="right"
+              align="left"
               linkLabel="View GitHub"
               image="/project_board.png"
               aiTier="LOW"
@@ -220,7 +218,7 @@ export default function Home() {
               stack={['Next.js', 'TypeScript', 'Supabase', 'Tailwind']}
               link="https://github.com/HugoOuwerkerk/Platzpionier"
               color="#E0115F"
-              align="left"
+              align="right"
               image="/platzpionier.png"
               linkLabel="View GitHub"
               maskLink={true}
