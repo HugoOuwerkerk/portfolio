@@ -75,7 +75,7 @@ export default function Home() {
           <div className="relative border-l-2 border-slate-800 ml-2 md:ml-12 space-y-16">
 
             <TimelineItem
-              date="2026 - Present"
+              date="March 2026 - May 2026"
               title="Emmedy Learning Solutions"
               role="Full Stack Developer"
               desc="Working as a Full Stack Developer on a comprehensive Learning Management System (LMS). Developing features that help businesses efficiently schedule, deliver, and track employee training courses."
@@ -191,12 +191,12 @@ export default function Home() {
               title="Puntcode"
               desc="The marketing website for my web design business. It serves as the main hub for offering custom websites to local businesses. (Pre-launch, Finalizing regulatory requirements)"
               stack={['Next.js', 'TypeScript', 'Tailwind']}
-              link="#"
+              link="https://puntcode.de"
               color="#E0115F"
               align="right"
               image="/puntcode.png"
               linkLabel="View Website"
-              maskLink={true}
+              maskLink={false}
               aiTier="MEDIUM"
             />
 
