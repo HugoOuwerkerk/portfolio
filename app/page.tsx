@@ -79,7 +79,7 @@ export default function Home() {
               title="Emmedy Learning Solutions"
               role="Full Stack Developer"
               desc="Working as a Full Stack Developer on a comprehensive Learning Management System (LMS). Developing features that help businesses efficiently schedule, deliver, and track employee training courses."
-              tech={['PHP', 'Symfony', 'Twig']}
+              tech={['PHP', 'Symfony', 'Twig', 'JavaScript']}
               link="https://emmedy.nl"
               icon={<Terminal size={20} />}
               highlight
