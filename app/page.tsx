@@ -97,12 +97,21 @@ export default function Home() {
             />
 
             <TimelineItem
-              date="2022 - Present"
-              title="Beim Schweinswirt"
+              date="May 2026 - Present"
+              title="Landgasthof Koninghoek"
               role="Kitchen Staff & Web Developer"
-              desc="Working in the kitchen as part of the cooking staff. I also built the official website and currently handle its hosting and maintenance."
+              desc="Working in the kitchen as part of the cooking staff. I also built the official website and handle its hosting and maintenance."
               tech={['Next.js', 'Tailwind']}
-              link="https://schweinswirt-uelsen.de"
+              link="https://koninghoek.de"
+              icon={<ChefHat size={20} />}
+            />
+
+            <TimelineItem
+              date="2022 - April 2026"
+              title="Beim Schweinswirt (Closed)"
+              role="Kitchen Staff & Web Developer"
+              desc="Worked in the kitchen as part of the cooking staff. I also built the official website and handled its hosting and maintenance."
+              tech={['Next.js', 'Tailwind']}
               icon={<ChefHat size={20} />}
             />
 
@@ -178,12 +187,13 @@ export default function Home() {
 
             <ProjectShowcase
               title="Beim Schweinswirt"
-              desc="The official website for the restaurant. Features include the complete digital menu and a custom form for handling group events and parties."
+              desc="The official website for the restaurant. Features include the complete digital menu and a custom form for handling group events and parties. (Restaurant closed)"
               stack={['React', 'Vite', 'Tailwind']}
               link="https://www.schweinswirt-uelsen.de/nl"
               color="#E0115F"
               align="left"
               image="/schweinswirt.png"
+              maskLink={true}
               aiTier="MEDIUM"
             />
 
