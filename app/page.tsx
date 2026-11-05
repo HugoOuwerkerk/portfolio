@@ -155,24 +155,19 @@ export default function Home() {
       {/* TECH STACK */}
       <section className="relative z-10 bg-[#050505] py-10 md:py-32 pt-8 md:pt-12 px-6">
         <div className="max-w-6xl mx-auto">
-          <SectionTitle title="KERNEL_MODULES" subtitle="Tech Stack" />
+          <SectionTitle title="KERNEL_MODULES" subtitle="Experience With" />
 
           <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4">
             <TechCard icon={<Terminal />} name="PHP" color="text-[#777BB4]" />
             <TechCard icon={<Code2 />} name="Python" color="text-[#3776AB]" />
             <TechCard icon={<Code2 />} name="TypeScript" color="text-[#3178C6]" />
+            <TechCard icon={<Code2 />} name="React" color="text-[#61DAFB]" />
             <TechCard icon={<Layers />} name="Laravel" color="text-[#FF2D20]" />
-            <TechCard icon={<Code2 />} name="Next.js" color="text-white" />
+            <TechCard icon={<Code2 />} name="Astro" color="text-[#FF5D01]" />
             <TechCard icon={<Wind />} name="Tailwind" color="text-[#06B6D4]" />
-            <TechCard icon={<GitBranch />} name="Git" color="text-[#F05032]" />
             <TechCard icon={<Container />} name="Docker" color="text-[#2496ED]" />
             <TechCard icon={<Database />} name="SQL" color="text-[#00BCF2]" />
-            <TechCard icon={<Code2 />} name="Astro" color="text-[#FF5D01]" />
-            <TechCard icon={<Code2 />} name="React" color="text-[#61DAFB]" />
-            <TechCard icon={<Terminal />} name="Node.js" color="text-[#5FA04E]" />
-            <TechCard icon={<Code2 />} name="JavaScript" color="text-[#F7DF1E]" />
-            <TechCard icon={<Layers />} name="Symfony" color="text-white" />
-            <TechCard icon={<Layers />} name="Capacitor" color="text-[#119EFF]" />
+            <TechCard icon={<GitBranch />} name="Git" color="text-[#F05032]" />
           </div>
         </div>
       </section>
