@@ -188,6 +188,7 @@ export default function Home() {
               align="left"
               image="/kraftlab.jpg"
               linkLabel="View Website"
+              aiTier="ALL"
             />
 
             <ProjectShowcase
@@ -199,6 +200,7 @@ export default function Home() {
               align="right"
               image="/koninghoek.jpg"
               linkLabel="View Website"
+              aiTier="HIGH"
             />
 
             <ProjectShowcase
@@ -382,7 +384,7 @@ interface ProjectShowcaseProps {
   image?: string;
   linkLabel?: string;
   maskLink?: boolean;
-  aiTier?: 'NONE' | 'LOW' | 'MEDIUM' | 'ALL';
+  aiTier?: 'NONE' | 'LOW' | 'MEDIUM' | 'HIGH' | 'ALL';
 }
 
 function ProjectShowcase({ title, desc, stack, link, color, align, image, linkLabel = "View Deployment", maskLink = false, aiTier }: ProjectShowcaseProps) {
@@ -390,7 +392,8 @@ function ProjectShowcase({ title, desc, stack, link, color, align, image, linkLa
   const AI_TIERS: any = {
     NONE: "Hand-crafted with hot chocolate",
     LOW: "Hand-crafted with a sprinkle of AI",
-    MEDIUM: "50% Human, 50% Hallucination",
+    MEDIUM: "50% Human, 50% Autocomplete",
+    HIGH: "25% Human, 75% Autocomplete",
     ALL: "Prompt-engineered to perfection"
   };
 
