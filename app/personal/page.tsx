@@ -1,13 +1,12 @@
 import { ArrowLeft, Terminal } from "lucide-react";
 import Link from "next/link";
-import { StravaCard } from "../components/strava-card";
 import { TravelGrid } from "../components/travel-grid";
 import { getTrips } from "../lib/travel-data";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Personal Dashboard | Hugo Ouwerkerk",
-    description: "Insights into my latest activities, running data and travel logs.",
+    description: "Travel logs and photos.",
 };
 
 export default function PersonalPage() {
@@ -27,25 +26,10 @@ export default function PersonalPage() {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-                        {/* Left Column */}
-                        <div className="space-y-8">
-                            <section>
-                                <SectionHeader title="RECENT_STRAVA_ACTIVITY" />
-                                <div className="space-y-4">
-                                    <StravaCard />
-                                </div>
-                            </section>
-                        </div>
-
-                        {/* Right Column */}
-                        <div className="md:col-span-2 space-y-12">
-                            <section>
-                                <SectionHeader title="TRAVEL_GALLERY" />
-                                <TravelGrid trips={trips} />
-                            </section>
-                        </div>
-                    </div>
+                    <section>
+                        <SectionHeader title="TRAVEL_GALLERY" />
+                        <TravelGrid trips={trips} />
+                    </section>
                 </div>
 
                 {/* Footer */}

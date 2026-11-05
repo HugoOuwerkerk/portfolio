@@ -19,12 +19,6 @@ export default function Home() {
       {/* Scroll Bar */}
       <motion.div className="fixed top-0 left-0 right-0 h-1 bg-[#E0115F] origin-left z-50" style={{ scaleX }} />
 
-      {/* Server Status Badge */}
-      <div className="fixed bottom-6 right-6 z-50 hidden md:flex items-center gap-2 bg-[#050505]/80 backdrop-blur border border-slate-800 px-4 py-2 rounded-full text-xs font-mono text-slate-500">
-        <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-        <span>SELF_HOSTED</span>
-      </div>
-
       {/* HERO SECTION */}
       <section className="min-h-[100dvh] flex flex-col justify-center items-center relative px-6 md:h-screen">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/50 to-[#050505] pointer-events-none" />
@@ -78,7 +72,7 @@ export default function Home() {
               date="March 2026 - May 2026"
               title="Emmedy Learning Solutions"
               role="Full Stack Developer"
-              desc="Working as a Full Stack Developer on a comprehensive Learning Management System (LMS). Developing features that help businesses efficiently schedule, deliver, and track employee training courses."
+              desc="Worked as a Full Stack Developer on a comprehensive Learning Management System (LMS). Developed features that help businesses efficiently schedule, deliver, and track employee training courses."
               tech={['PHP', 'Symfony', 'Twig', 'JavaScript']}
               link="https://emmedy.nl"
               icon={<Terminal size={20} />}
@@ -100,8 +94,8 @@ export default function Home() {
               date="May 2026 - Present"
               title="Landgasthof Koninghoek"
               role="Kitchen Staff & Web Developer"
-              desc="Working in the kitchen as part of the cooking staff. I also built the official website and handle its hosting and maintenance."
-              tech={['Next.js', 'Tailwind']}
+              desc="Because of staff shortages I often run the kitchen myself, with a trained cook keeping an eye on things. I also built the official website and handle its hosting and maintenance."
+              tech={['Astro', 'React', 'Tailwind']}
               link="https://koninghoek.de"
               icon={<ChefHat size={20} />}
             />
@@ -111,7 +105,7 @@ export default function Home() {
               title="Beim Schweinswirt (Closed)"
               role="Kitchen Staff & Web Developer"
               desc="Worked in the kitchen as part of the cooking staff. I also built the official website and handled its hosting and maintenance."
-              tech={['Next.js', 'Tailwind']}
+              tech={['React', 'Vite', 'Tailwind']}
               icon={<ChefHat size={20} />}
             />
 
@@ -150,7 +144,7 @@ export default function Home() {
             </div>
             <div className="w-full md:w-2/3 space-y-6 text-lg text-slate-400 leading-relaxed">
               <p>
-                I'm Hugo, a backend developer who occasionally lets AI handle the pixels. I'm in the early stages of building Puntcode to get local businesses online. In my free time, I like to cook, <Link href="/personal" className="text-[#E0115F] underline underline-offset-4 decoration-[#E0115F]/30 hover:decoration-[#E0115F] transition-colors">lift weights</Link>, and <Link href="/personal" className="text-[#E0115F] underline underline-offset-4 decoration-[#E0115F]/30 hover:decoration-[#E0115F] transition-colors">travel</Link> to places most people don't go.
+                I'm Hugo, a backend developer who occasionally lets AI handle the pixels. I run Puntcode, my one-person software business, where I'm moving from client websites to building my own products, starting with KraftLab. In my free time, I like to cook and <Link href="/personal" className="text-[#E0115F] underline underline-offset-4 decoration-[#E0115F]/30 hover:decoration-[#E0115F] transition-colors">travel</Link> to places most people don't go.
               </p>
 
             </div>
@@ -174,6 +168,11 @@ export default function Home() {
             <TechCard icon={<Container />} name="Docker" color="text-[#2496ED]" />
             <TechCard icon={<Database />} name="SQL" color="text-[#00BCF2]" />
             <TechCard icon={<Code2 />} name="Astro" color="text-[#FF5D01]" />
+            <TechCard icon={<Code2 />} name="React" color="text-[#61DAFB]" />
+            <TechCard icon={<Terminal />} name="Node.js" color="text-[#5FA04E]" />
+            <TechCard icon={<Code2 />} name="JavaScript" color="text-[#F7DF1E]" />
+            <TechCard icon={<Layers />} name="Symfony" color="text-white" />
+            <TechCard icon={<Layers />} name="Capacitor" color="text-[#119EFF]" />
           </div>
         </div>
       </section>
@@ -186,25 +185,35 @@ export default function Home() {
           <div className="space-y-20 md:space-y-32">
 
             <ProjectShowcase
-              title="Beim Schweinswirt"
-              desc="The official website for the restaurant. Features include the complete digital menu and a custom form for handling group events and parties. (Restaurant closed)"
-              stack={['React', 'Vite', 'Tailwind']}
-              link="https://www.schweinswirt-uelsen.de/nl"
+              title="KraftLab"
+              desc="A training app for hybrid athletes. Log gym sessions and cardio, plan your week, sync runs from Strava, and connect your own AI assistant as a coach. Available in English, German, and Dutch."
+              stack={['React', 'Vite', 'Express', 'SQLite', 'Capacitor', 'Docker']}
+              link="https://kraftlab.app"
               color="#E0115F"
               align="left"
-              image="/schweinswirt.png"
-              maskLink={true}
-              aiTier="MEDIUM"
+              image="/kraftlab.jpg"
+              linkLabel="View Website"
+            />
+
+            <ProjectShowcase
+              title="Landgasthof Koninghoek"
+              desc="The official website for the restaurant I work at, in German, English, and Dutch. Features the complete digital menu, table reservations, and pages for events and job openings."
+              stack={['Astro', 'React', 'Tailwind', 'Docker']}
+              link="https://www.koninghoek.de"
+              color="#E0115F"
+              align="right"
+              image="/koninghoek.jpg"
+              linkLabel="View Website"
             />
 
             <ProjectShowcase
               title="Puntcode"
-              desc="The marketing website for my web design business. It serves as the main hub for offering custom websites to local businesses. (Pre-launch, Finalizing regulatory requirements)"
-              stack={['Next.js', 'TypeScript', 'Tailwind']}
+              desc="My one-person software business, moving from client websites to building my own products, like KraftLab."
+              stack={['Astro', 'React', 'TypeScript', 'Tailwind']}
               link="https://puntcode.de"
               color="#E0115F"
-              align="right"
-              image="/puntcode.png"
+              align="left"
+              image="/puntcode.jpg"
               linkLabel="View Website"
               maskLink={false}
               aiTier="MEDIUM"
@@ -212,11 +221,11 @@ export default function Home() {
 
             <ProjectShowcase
               title="ProjectBoard"
-              desc="A minimal self-hosted project manager to organize projects, tasks, and notes involved in the development lifecycle. Built with SvelteKit and FastAPI, running in Docker. (Self-hosted at home, using it daily for my own projects)"
+              desc="A minimal self-hosted project manager to organize projects, tasks, and notes involved in the development lifecycle. Built with SvelteKit and FastAPI, running in Docker. (Retired, I used it daily for my own projects while running it at home)"
               stack={['SvelteKit', 'FastAPI', 'Docker', 'SQLite']}
               link="https://github.com/HugoOuwerkerk/ProjectBoard"
               color="#E0115F"
-              align="left"
+              align="right"
               linkLabel="View GitHub"
               image="/project_board.png"
               aiTier="LOW"
@@ -228,7 +237,7 @@ export default function Home() {
               stack={['Next.js', 'TypeScript', 'Supabase', 'Tailwind']}
               link="https://github.com/HugoOuwerkerk/Platzpionier"
               color="#E0115F"
-              align="right"
+              align="left"
               image="/platzpionier.png"
               linkLabel="View GitHub"
               maskLink={true}
@@ -249,7 +258,7 @@ export default function Home() {
           <span className="text-[#E0115F] animate-pulse">_</span>
         </h2>
         <p className="text-slate-400 mb-8 max-w-xl mx-auto">
-          Based in Uelsen, Germany. 0% cloud. 100% self-hosted.
+          Based in Uelsen, Germany.
         </p>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mb-8 md:mb-12">

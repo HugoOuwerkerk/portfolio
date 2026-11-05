@@ -19,7 +19,7 @@ for (const [name, url] of Object.entries(SITES)) {
   const page = await context.newPage();
   await page.goto(url, { waitUntil: 'networkidle', timeout: 60000 });
   await page.waitForTimeout(3000);
-  await page.screenshot({ path: `public/${name}.png` });
+  await page.screenshot({ path: `public/${name}.jpg`, type: 'jpeg', quality: 85 });
   console.log(`${name}: ${await page.title()}`);
   await page.close();
 }

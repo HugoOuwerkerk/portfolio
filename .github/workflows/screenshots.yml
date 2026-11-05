@@ -32,6 +32,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/koninghoek.png public/puntcode.png public/kraftlab.png
+          git add public/koninghoek.jpg public/puntcode.jpg public/kraftlab.jpg
           git diff --cached --quiet || git commit -m "Update project screenshots"
           git push
