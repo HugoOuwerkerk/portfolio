@@ -1,0 +1,37 @@
+name: Screenshots
+
+# Takes fresh 16:9 screenshots of the live sites and commits them to public/.
+# Start it by hand from the Actions tab whenever a site has changed.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/screenshots.mjs'
+      - '.github/workflows/screenshots.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Playwright
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install --with-deps chromium
+      - name: Take screenshots
+        run: node scripts/screenshots.mjs
+      - name: Commit changed images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/koninghoek.png public/puntcode.png public/kraftlab.png
+          git diff --cached --quiet || git commit -m "Update project screenshots"
+          git push
