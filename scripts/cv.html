@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Hugo Ouwerkerk - CV</title>
+<!-- Source for public/Hugo-Ouwerkerk-CV.pdf. Rebuild (absolute output path required):
+     chrome --headless=new --no-pdf-header-footer --virtual-time-budget=15000 --print-to-pdf=<abs path>/public/Hugo-Ouwerkerk-CV.pdf file:///<abs path>/scripts/cv.html -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 0; }
+  :root {
+    --ruby: #E0115F;
+    --ink: #111418;
+    --body: #2b323b;
+    --muted: #5b6472;
+    --rule: #dfe3e8;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: #fff; }
+  body {
+    font-family: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+    color: var(--body);
+    font-size: 8.6pt;
+    line-height: 1.45;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page { width: 210mm; height: 297mm; padding: 13mm 15mm 11mm; overflow: hidden; }
+  header { border-bottom: 2px solid var(--ruby); padding-bottom: 4mm; margin-bottom: 4mm; }
+  h1 { margin: 0; font-size: 22pt; font-weight: 800; letter-spacing: -0.02em; color: var(--ink); }
+  .role { margin: 1mm 0 2.5mm; font-size: 10.5pt; font-weight: 700; color: var(--ruby); letter-spacing: 0.06em; text-transform: uppercase; }
+  .contact { display: flex; flex-wrap: wrap; gap: 0 5mm; color: var(--ink); }
+  .contact span::before { content: "/ "; color: var(--ruby); }
+  .contact span:first-child::before { content: ""; }
+  .open { margin: 2mm 0 0; color: var(--muted); }
+  .open b { color: var(--ink); }
+  h2 { margin: 4.5mm 0 2mm; font-size: 8pt; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); display: flex; align-items: center; gap: 2.5mm; }
+  h2::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+  h2::before { content: ""; width: 5px; height: 5px; background: var(--ruby); }
+  .item { margin-bottom: 2.6mm; break-inside: avoid; }
+  .row { display: flex; justify-content: space-between; gap: 4mm; align-items: baseline; }
+  .title { font-weight: 700; color: var(--ink); font-size: 9.2pt; }
+  .title small { font-weight: 400; color: var(--muted); font-size: 8.4pt; }
+  .date { color: var(--muted); white-space: nowrap; font-size: 8pt; }
+  .item p { margin: 0.6mm 0 0; }
+  .stack { color: var(--muted); font-size: 8pt; margin-top: 0.6mm; }
+  .skills { display: grid; grid-template-columns: 22mm 1fr; gap: 1mm 3mm; }
+  .skills dt { color: var(--muted); }
+  .skills dd { margin: 0; color: var(--ink); }
+  .summary { margin: 0; color: var(--body); }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <h1>Hugo Ouwerkerk</h1>
+    <div class="role">Full-stack developer</div>
+    <div class="contact">
+      <span>hah.ouwerkerk@outlook.com</span>
+      <span>github.com/HugoOuwerkerk</span>
+      <span>linkedin.com/in/hugo-ouwerkerk-461125295</span>
+    </div>
+    <p class="open">Uelsen, Germany. <b>Open to full-stack roles.</b> Remote or on-site, open to relocating.</p>
+  </header>
+
+  <p class="summary">I build web apps. I run Puntcode, my own software business, and I work in a restaurant kitchen.</p>
+
+  <h2>Experience</h2>
+  <div class="item">
+    <div class="row"><div class="title">Landgasthof Koninghoek <small>/ Kitchen Staff &amp; Web Developer</small></div><div class="date">May 2026 - Present</div></div>
+    <p>Run the kitchen when we are short-staffed, with a trained cook watching over. Built the restaurant's website and handle its hosting and upkeep.</p>
+    <div class="stack">Astro, React, Tailwind</div>
+  </div>
+  <div class="item">
+    <div class="row"><div class="title">Emmedy Learning Solutions <small>/ Full Stack Developer (internship)</small></div><div class="date">Mar 2026 - May 2026</div></div>
+    <p>Built features for a learning management system (LMS) that helps companies schedule, deliver and track employee training.</p>
+    <div class="stack">PHP, Symfony, Twig, JavaScript</div>
+  </div>
+  <div class="item">
+    <div class="row"><div class="title">Coddin <small>/ Backend Developer (internship)</small></div><div class="date">Nov 2025 - Jan 2026</div></div>
+    <p>Built internal client and employee portals with Laravel and Filament. Added backend features to client projects.</p>
+    <div class="stack">PHP, Laravel, Filament</div>
+  </div>
+  <div class="item">
+    <div class="row"><div class="title">Beim Schweinswirt <small>/ Kitchen Staff &amp; Web Developer (closed)</small></div><div class="date">2022 - Apr 2026</div></div>
+    <p>Cooked in the kitchen. Built the restaurant's website and handled its hosting and upkeep.</p>
+    <div class="stack">React, Vite, Tailwind</div>
+  </div>
+
+  <h2>Projects</h2>
+  <div class="item">
+    <div class="row"><div class="title">KraftLab <small>/ kraftlab.app</small></div></div>
+    <p>A training app for hybrid athletes. Log gym and cardio, plan your week, sync runs from Strava and connect your own AI coach. In English, German and Dutch.</p>
+    <div class="stack">React, Vite, Express, SQLite, Capacitor, Docker</div>
+  </div>
+  <div class="item">
+    <div class="row"><div class="title">Landgasthof Koninghoek <small>/ koninghoek.de</small></div></div>
+    <p>Website for the restaurant I work at. Digital menu, table reservations, events and job openings. In German, English and Dutch.</p>
+    <div class="stack">Astro, React, Tailwind, Docker</div>
+  </div>
+  <div class="item">
+    <div class="row"><div class="title">Puntcode <small>/ puntcode.de</small></div></div>
+    <p>My one-person software business. Moving from client websites to my own products, like KraftLab.</p>
+    <div class="stack">Astro, React, TypeScript, Tailwind</div>
+  </div>
+  <div class="item">
+    <div class="row"><div class="title">Earlier: ProjectBoard, Platzpionier</div></div>
+    <p>ProjectBoard is a self-hosted project manager (SvelteKit, FastAPI, Docker), retired after daily personal use. Platzpionier is an embeddable booking widget for restaurants (Next.js, Supabase), shelved over regulatory liability.</p>
+  </div>
+
+  <h2>Education</h2>
+  <div class="item">
+    <div class="row"><div class="title">Saxion University <small>/ Associate Degree, Software Development</small></div><div class="date">2023 - Present</div></div>
+    <p>Two-year degree in software engineering. System design, data structures, DevOps and team projects.</p>
+  </div>
+  <div class="item">
+    <div class="row"><div class="title">Canisius Almelo <small>/ HAVO (Natuur &amp; Techniek / Gezondheid)</small></div><div class="date">2018 - 2023</div></div>
+  </div>
+
+  <h2>Skills</h2>
+  <dl class="skills">
+    <dt>Backend</dt><dd>PHP, Laravel, Symfony, Python</dd>
+    <dt>Frontend</dt><dd>TypeScript, React, Astro, Tailwind</dd>
+    <dt>Tools</dt><dd>Docker, SQL, Git</dd>
+  </dl>
+</div>
+</body>
+</html>

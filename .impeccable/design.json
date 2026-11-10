@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-10T00:00:00.000Z",
+  "title": "Design System: Hugo Ouwerkerk Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "ruby": { "role": "primary", "displayName": "Ruby Signal", "canonical": "#E0115F", "tonalRamp": ["#3d0319", "#5e0624", "#850a35", "#b00e4e", "#E0115F", "#ec4a87", "#f58db3", "#fcd3e2"] },
+      "ruby-deep": { "role": "primary", "displayName": "Deep Ruby", "canonical": "#c20e52", "tonalRamp": ["#3d0319", "#5e0624", "#850a35", "#a30d45", "#c20e52", "#e0115f", "#ec4a87", "#f58db3"] },
+      "void": { "role": "neutral", "displayName": "Void Black", "canonical": "#050505", "tonalRamp": ["#050505", "#0a0a0a", "#111111", "#1a1a1a", "#262626", "#404040", "#737373", "#d4d4d4"] },
+      "panel-black": { "role": "neutral", "displayName": "Panel Black", "canonical": "#0a0a0a", "tonalRamp": ["#050505", "#0a0a0a", "#111111", "#1a1a1a", "#262626", "#404040", "#737373", "#d4d4d4"] },
+      "ink-white": { "role": "neutral", "displayName": "Ink White", "canonical": "#ffffff", "tonalRamp": ["#404040", "#737373", "#a3a3a3", "#d4d4d4", "#e5e5e5", "#f0f0f0", "#f8f8f8", "#ffffff"] },
+      "text-body": { "role": "neutral", "displayName": "Console Text", "canonical": "#e2e8f0", "tonalRamp": ["#334155", "#475569", "#64748b", "#94a3b8", "#cbd5e1", "#e2e8f0", "#f1f5f9", "#f8fafc"] },
+      "text-muted": { "role": "neutral", "displayName": "Muted Slate", "canonical": "#94a3b8", "tonalRamp": ["#1e293b", "#334155", "#475569", "#64748b", "#94a3b8", "#cbd5e1", "#e2e8f0", "#f1f5f9"] },
+      "text-quiet": { "role": "neutral", "displayName": "Quiet Slate", "canonical": "#64748b", "tonalRamp": ["#0f172a", "#1e293b", "#334155", "#475569", "#64748b", "#94a3b8", "#cbd5e1", "#e2e8f0"] },
+      "text-ghost": { "role": "neutral", "displayName": "Ghost Slate", "canonical": "#475569", "tonalRamp": ["#0f172a", "#1e293b", "#334155", "#475569", "#64748b", "#94a3b8", "#cbd5e1", "#e2e8f0"] },
+      "hairline": { "role": "neutral", "displayName": "Hairline Slate", "canonical": "#1e293b", "tonalRamp": ["#020617", "#0f172a", "#1e293b", "#334155", "#475569", "#64748b", "#94a3b8", "#cbd5e1"] },
+      "surface-slate": { "role": "neutral", "displayName": "Slate Panel", "canonical": "#0f172a", "tonalRamp": ["#020617", "#0f172a", "#1e293b", "#334155", "#475569", "#64748b", "#94a3b8", "#cbd5e1"] },
+      "ruby-text": { "role": "primary", "displayName": "Ruby Text", "canonical": "#FF3D7F", "tonalRamp": ["#3d0319", "#7a0a33", "#b00e4e", "#e0115f", "#FF3D7F", "#ff7aa6", "#ffb3cb", "#ffe0ea"] },
+      "glitch-cyan": { "role": "secondary", "displayName": "Glitch Cyan", "canonical": "#00BCF2", "tonalRamp": ["#00303f", "#005a77", "#007fa6", "#00a0d1", "#00BCF2", "#4dd0f6", "#99e4fa", "#d6f5fd"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero name with gradient fill and glitch effect." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles." },
+      "title": { "displayName": "Title", "purpose": "Timeline entry and project names." },
+      "body": { "displayName": "Body", "purpose": "Project and about paragraphs." },
+      "label": { "displayName": "Label", "purpose": "Dates, roles, stack lists, system-style metadata." }
+    },
+    "shadows": [
+      { "name": "lightbox", "value": "0 25px 50px -12px rgba(0,0,0,0.25)", "purpose": "Only elevated surface: the travel lightbox panel." }
+    ],
+    "motion": [
+      { "name": "link-hover", "value": "300ms ease-in-out", "purpose": "Color shift to ruby on link hover." },
+      { "name": "scroll-spring", "value": "spring stiffness 100, damping 30", "purpose": "Scroll-progress bar easing." },
+      { "name": "reveal-in", "value": "opacity 0 to 1, y 50 to 0 (x -20 to 0 for timeline), once at -100px margin", "purpose": "Section and project entrance." },
+      { "name": "glitch-loop", "value": "5s linear infinite alternate-reverse", "purpose": "Hero name clip and skew glitch." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The Email me button: ruby fill, white bold label, 56px tall. Used in the hero and contact section.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Email me</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 56px; padding: 0 40px; border-radius: 6px; background: #E0115F; color: #fff; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 18px; font-weight: 700; text-decoration: none; transition: background 150ms; } .ds-btn:hover { background: #c20e52; } .ds-btn:focus-visible { outline: 2px solid #E0115F; outline-offset: 3px; }"
+    },
+    {
+      "name": "CTA Link",
+      "kind": "custom",
+      "refersTo": "link-cta",
+      "description": "White bold project link with external-link icon; turns ruby on hover.",
+      "html": "<a class=\"ds-cta\" href=\"#\">View Website <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M15 3h6v6\"/><path d=\"M10 14 21 3\"/><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/></svg></a>",
+      "css": ".ds-cta { display: inline-flex; align-items: center; gap: 8px; color: #fff; font-weight: 700; font-family: ui-monospace, Menlo, Consolas, monospace; text-decoration: none; transition: color 300ms ease-in-out; } .ds-cta svg { transition: transform 150ms; } .ds-cta:hover { color: #E0115F; } .ds-cta:hover svg { transform: translate(4px, -4px); } .ds-cta:focus-visible { outline: 2px solid #E0115F; outline-offset: 4px; }"
+    },
+    {
+      "name": "Tech Chip",
+      "kind": "chip",
+      "refersTo": "tech-chip",
+      "description": "Small mono tag for a technology on a timeline entry.",
+      "html": "<span class=\"ds-chip\">Laravel</span>",
+      "css": ".ds-chip { display: inline-block; padding: 4px 8px; background: #0f172a; border: 1px solid #1e293b; border-radius: 4px; color: #cbd5e1; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12px; }"
+    },
+    {
+      "name": "Intern Badge",
+      "kind": "chip",
+      "refersTo": "badge-intern",
+      "description": "Ruby pill marking internship roles.",
+      "html": "<span class=\"ds-badge\">INTERN</span>",
+      "css": ".ds-badge { display: inline-block; padding: 2px 8px; background: #E0115F; color: #fff; border-radius: 9999px; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 10px; }"
+    },
+    {
+      "name": "Tech Card",
+      "kind": "card",
+      "refersTo": "tech-card",
+      "description": "Square card with a brand-colored icon glyph and white name.",
+      "html": "<div class=\"ds-tech\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#777BB4\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m4 17 6-6-6-6\"/><path d=\"M12 19h8\"/></svg><span>PHP</span></div>",
+      "css": ".ds-tech { display: flex; align-items: center; gap: 16px; padding: 24px; background: rgba(15,23,42,0.5); border: 1px solid #1e293b; color: #fff; font-weight: 700; font-family: ui-monospace, Menlo, Consolas, monospace; }"
+    },
+    {
+      "name": "Timeline Entry",
+      "kind": "custom",
+      "refersTo": "timeline-entry",
+      "description": "Signature pattern: icon node on a 2px spine, ruby date, white title, slate role.",
+      "html": "<div class=\"ds-tl\"><div class=\"ds-tl-node\"></div><div class=\"ds-tl-date\">May 2026 - Present</div><div class=\"ds-tl-title\">Landgasthof Koninghoek</div><div class=\"ds-tl-role\">Kitchen Staff &amp; Web Developer</div></div>",
+      "css": ".ds-tl { position: relative; padding-left: 32px; border-left: 2px solid #1e293b; font-family: ui-monospace, Menlo, Consolas, monospace; } .ds-tl-node { position: absolute; left: -21px; top: 0; width: 40px; height: 40px; border-radius: 9999px; border: 4px solid #050505; background: #E0115F; } .ds-tl-date { color: #E0115F; font-size: 14px; } .ds-tl-title { color: #fff; font-size: 24px; font-weight: 700; } .ds-tl-role { color: #94a3b8; font-size: 14px; }"
+    },
+    {
+      "name": "Photo Card",
+      "kind": "card",
+      "refersTo": "photo-card",
+      "description": "4:5 travel card with ruby file count and bottom gradient.",
+      "html": "<div class=\"ds-photo\"><div class=\"ds-photo-meta\"><div class=\"ds-photo-count\">12 FILES</div><div class=\"ds-photo-title\">Austria 2025</div></div></div>",
+      "css": ".ds-photo { position: relative; width: 200px; aspect-ratio: 4/5; border-radius: 12px; overflow: hidden; background: #0f172a; border: 1px solid #1e293b; font-family: ui-monospace, Menlo, Consolas, monospace; transition: transform 200ms; } .ds-photo:hover { transform: translateY(-5px); } .ds-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); } .ds-photo-meta { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; padding: 16px; } .ds-photo-count { color: #E0115F; font-size: 12px; } .ds-photo-title { color: #fff; font-weight: 700; font-size: 18px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Ruby Terminal",
+    "overview": "A dark console with one gemstone-red signal. The page sits on near-black (#050505), headings are pure white, body copy is cool slate, and a single ruby accent (#E0115F) marks everything that is live, selected or clickable. Type is monospace throughout, which gives the site its engineered character without any ornament beyond a few terminal-style cues (a blinking _ cursor, uppercase labels, /// separators, a glitch-effect name in the hero).\n\nThe voice is dry and a little witty, in the same register as the AI-tier labels on projects. The look stays restrained and tidy: generous space between sections, simple two-column layouts, hairline borders instead of shadows. Confidence comes from contrast and a single hot color, not from decoration.",
+    "keyCharacteristics": [
+      "Near-black ground, white headlines, slate body text, one ruby accent.",
+      "Monospace everywhere; uppercase tracked labels for system-style metadata.",
+      "Flat and border-defined: depth through slate hairlines and tonal panels.",
+      "Terminal vocabulary used as seasoning (cursor, ///, glitch), never as the whole layout.",
+      "Motion is scroll-driven reveal, plus one signature glitch in the hero."
+    ],
+    "rules": [
+      { "name": "The One Signal Rule", "body": "Ruby is the only chromatic color in the interface. Anything else that needs emphasis uses white or a slate step.", "section": "colors" },
+      { "name": "The Brand-Color Quarantine Rule", "body": "Technology brand colors appear only on the icon glyph inside tech cards, never on borders, backgrounds or text.", "section": "colors" },
+      { "name": "The Uppercase-For-System Rule", "body": "Uppercase and wide tracking are reserved for system-style metadata and the hero role line. Prose is always sentence case.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest. Only the full-screen lightbox earns a shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep Ruby (#E0115F) as the only accent and use it on short, meaningful signals: dates, hover states, badges, cursors.",
+      "Do use Void Black (#050505) for the page and Hairline Slate (#1e293b) for every border.",
+      "Do keep copy dry and plain, with one small joke at a time.",
+      "Do use uppercase tracked mono only for system-style labels and keep prose in sentence case.",
+      "Do respect the 6xl (1152px) container and the large section rhythm when adding sections."
+    ],
+    "donts": [
+      "Don't add drop shadows to cards; the lightbox is the only shadow.",
+      "Don't introduce a second accent color or any gradient fills.",
+      "Don't put a phone number on the site.",
+      "Don't use technology brand colors outside the tech-card icon glyph.",
+      "Don't pile on terminal gimmicks; the layout stays simple and tidy.",
+      "Don't rely on Inter or JetBrains Mono being loaded; the rendered voice is the system monospace stack until a font is explicitly wired in."
+    ]
+  }
+}

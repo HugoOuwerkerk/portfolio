@@ -1,34 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  /* Modern Terminal Palette */
-  --background: #09090b;
-  /* Zinc 950 */
-  --foreground: #e4e4e7;
-  /* Zinc 200 */
-
-  /* Syntax Highlighting Colors */
-  --ruby: #e11d48;
-  /* Rose 600 - The Gemstone */
-  --code-blue: #3b82f6;
-  --code-green: #22c55e;
-  --code-purple: #a855f7;
-
-  /* UI Elements */
-  --terminal-bg: #18181b;
-  /* Zinc 900 */
-  --terminal-border: #27272a;
-  /* Zinc 800 */
+  --background: #050505;
+  --foreground: #e2e8f0;
 }
 
 @theme inline {
-  --color-ruby: var(--ruby);
-  --color-terminal-bg: var(--terminal-bg);
-  --color-terminal-border: var(--terminal-border);
-  --color-code-blue: var(--code-blue);
-  --color-code-green: var(--code-green);
-  --color-code-purple: var(--code-purple);
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 body {
@@ -46,9 +24,10 @@ body {
 .glitch {
   position: relative;
   color: white;
-  mix-blend-mode: exclusion;
 }
 
+/* The glitch layers are hidden at rest. They play once shortly after load
+   and again while the name is hovered. */
 .glitch::before,
 .glitch::after {
   content: attr(data-text);
@@ -58,20 +37,64 @@ body {
   width: 100%;
   height: 100%;
   background: #050505;
+  opacity: 0;
 }
 
 .glitch::before {
   left: 2px;
   text-shadow: -1px 0 #E0115F;
   clip: rect(44px, 450px, 56px, 0);
-  animation: glitch-anim 5s infinite linear alternate-reverse;
+  animation: glitch-anim 0.8s 0.6s linear 1, glitch-visible 0.8s 0.6s linear 1;
 }
 
 .glitch::after {
   left: -2px;
   text-shadow: -1px 0 #00BCF2;
   clip: rect(44px, 450px, 56px, 0);
-  animation: glitch-anim2 5s infinite linear alternate-reverse;
+  animation: glitch-anim2 0.8s 0.6s linear 1, glitch-visible 0.8s 0.6s linear 1;
+}
+
+.glitch:hover::before {
+  opacity: 1;
+  animation: glitch-anim 2s linear infinite alternate-reverse;
+}
+
+.glitch:hover::after {
+  opacity: 1;
+  animation: glitch-anim2 2s linear infinite alternate-reverse;
+}
+
+@keyframes glitch-visible {
+  0%,
+  99% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .glitch::before,
+  .glitch::after,
+  .glitch:hover::before,
+  .glitch:hover::after {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #E0115F;
+  outline-offset: 3px;
 }
 
 @keyframes glitch-anim {
@@ -299,7 +322,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: #E0115F;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {

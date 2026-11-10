@@ -1,298 +1,291 @@
 "use client";
 
-import { motion, useScroll, useSpring } from "framer-motion";
-import { Code2, Database, Layers, ExternalLink, GraduationCap, Terminal, School, ChefHat, GitBranch, Wind, Container, Workflow } from "lucide-react";
+import { motion, MotionConfig, useReducedMotion, useScroll, useSpring } from "framer-motion";
+import { ArrowDown, ChefHat, Download, ExternalLink, GraduationCap, Mail, School, Terminal } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+const EMAIL = "hah.ouwerkerk@outlook.com";
+const CV_PATH = "/Hugo-Ouwerkerk-CV.pdf";
+const GITHUB = "https://github.com/HugoOuwerkerk";
+const LINKEDIN = "https://www.linkedin.com/in/hugo-ouwerkerk-461125295/";
 
+const btnPrimary =
+  "inline-flex items-center justify-center gap-3 min-h-14 px-10 rounded-md bg-[#E0115F] text-white text-lg font-bold transition-colors hover:bg-[#c20e52]";
+const btnSecondary =
+  "inline-flex items-center justify-center gap-2 min-h-14 px-8 rounded-md border border-slate-600 text-white font-bold transition-colors hover:border-[#E0115F]";
+const linkQuiet =
+  "inline-flex items-center min-h-11 text-slate-300 hover:text-white transition-colors underline underline-offset-4 decoration-slate-600 hover:decoration-[#E0115F]";
+
+const reveal = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-40px" },
+  transition: { duration: 0.4, ease: "easeOut" as const },
+};
+
+export default function Home() {
+  const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
+  const smooth = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
   return (
-    <main className="min-h-screen bg-[#050505] text-slate-200 overflow-x-hidden selection:bg-[#E0115F] selection:text-white font-mono">
-
-      {/* Scroll Bar */}
-      <motion.div className="fixed top-0 left-0 right-0 h-1 bg-[#E0115F] origin-left z-50" style={{ scaleX }} />
-
-      {/* HERO SECTION */}
-      <section className="min-h-[100dvh] flex flex-col justify-center items-center relative px-6 md:h-screen">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/50 to-[#050505] pointer-events-none" />
-
+    <MotionConfig reducedMotion="user">
+      <main className="min-h-screen bg-[#050505] text-slate-200 overflow-x-hidden selection:bg-[#E0115F] selection:text-white font-mono">
+        {/* Scroll progress */}
         <motion.div
-          initial={{ opacity: 0, scale: 2 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, type: "spring" }}
-          className="relative z-10 text-center"
-        >
+          className="fixed top-0 left-0 right-0 h-1 bg-[#E0115F] origin-left z-50"
+          style={{ scaleX: reduceMotion ? scrollYProgress : smooth }}
+        />
+
+        {/* HERO */}
+        <section className="min-h-[100dvh] flex flex-col justify-center items-center px-6 py-16">
           <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: "100%" }}
-            transition={{ duration: 1.5, delay: 0.5 }}
-            className="h-1 bg-[#E0115F] mb-6 mx-auto"
-          />
-          {/* Glitch Text */}
-          <div className="glitch-wrapper mb-4">
-            <h1 className="glitch text-3xl md:text-6xl lg:text-8xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-400 to-slate-600 mix-blend-exclusion" data-text="HUGO_OUWERKERK">
-              HUGO_OUWERKERK
-            </h1>
-          </div>
-          <p className="text-[#E0115F] text-xl md:text-2xl font-bold tracking-widest uppercase mb-8">
-            Software Developer
-          </p>
-          <div className="flex justify-center gap-4 text-sm text-slate-500">
-            <span>Based in Uelsen, Germany</span>
-          </div>
-        </motion.div>
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="text-center max-w-2xl"
+          >
+            <div className="h-1 w-24 bg-[#E0115F] mb-6 mx-auto" />
+            <div className="glitch-wrapper mb-4">
+              <h1
+                className="glitch text-3xl md:text-6xl lg:text-8xl font-black tracking-tight text-white"
+                data-text="HUGO_OUWERKERK"
+              >
+                HUGO_OUWERKERK
+              </h1>
+            </div>
+            <p className="text-[#E0115F] text-xl md:text-2xl font-bold tracking-widest uppercase mb-6">
+              Full-stack developer
+            </p>
+            <p className="text-lg text-slate-300 leading-relaxed mb-2">
+              I build web apps. I run Puntcode, my own software business, and I work in a restaurant kitchen.
+            </p>
+            <p className="text-lg text-white font-bold leading-relaxed mb-1">Open to full-stack roles.</p>
+            <p className="text-base text-slate-400 mb-10">Remote or on-site, open to relocating. Based in Uelsen, Germany.</p>
 
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="absolute bottom-10 text-slate-500 text-xs tracking-widest"
-        >
-          SCROLL TO EXPLORE
-        </motion.div>
-      </section>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 mb-6">
+              <a href={`mailto:${EMAIL}`} className={btnPrimary}>
+                <Mail size={20} /> Email me
+              </a>
+              <a href={CV_PATH} download className={btnSecondary}>
+                <Download size={18} /> Download CV
+              </a>
+            </div>
+            <a href="#projects" className={linkQuiet}>
+              See projects <ArrowDown size={16} className="ml-2" />
+            </a>
+          </motion.div>
+        </section>
 
+        {/* PROJECTS */}
+        <section id="projects" className="px-6 py-16 md:py-28 scroll-mt-4">
+          <div className="max-w-6xl mx-auto">
+            <SectionTitle title="PROJECTS" subtitle="My Projects" />
 
+            <div className="space-y-20 md:space-y-28">
+              <ProjectShowcase
+                title="KraftLab"
+                desc="A training app for hybrid athletes. Log gym and cardio, plan your week, sync runs from Strava and connect your own AI coach. In English, German and Dutch."
+                stack={["React", "Vite", "Express", "SQLite", "Capacitor", "Docker"]}
+                link="https://kraftlab.app"
+                align="left"
+                image="/kraftlab.jpg"
+                linkLabel="View website"
+                aiTier="ALL"
+              />
 
-      {/* EXPERIENCE TIMELINE TODO: split up in 2/3 parts (education, work coding, work other)*/}
-      <section className="relative z-10 bg-[#050505] py-10 md:py-32 px-6">
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-[#050505] -mt-32 pointer-events-none" />
-        <div className="max-w-6xl mx-auto">
-          <SectionTitle title="SYSTEM_LOGS" subtitle="Experience & Education" />
+              <ProjectShowcase
+                title="Landgasthof Koninghoek"
+                desc="The website for the restaurant I work at. Digital menu, table reservations, events and job openings. In German, English and Dutch."
+                stack={["Astro", "React", "Tailwind", "Docker"]}
+                link="https://www.koninghoek.de"
+                align="right"
+                image="/koninghoek.jpg"
+                linkLabel="View website"
+                aiTier="HIGH"
+              />
 
-          <div className="relative border-l-2 border-slate-800 ml-2 md:ml-12 space-y-16">
+              <ProjectShowcase
+                title="Puntcode"
+                desc="My one-person software business. I'm moving from client websites to my own products, like KraftLab."
+                stack={["Astro", "React", "TypeScript", "Tailwind"]}
+                link="https://puntcode.de"
+                align="left"
+                image="/puntcode.jpg"
+                linkLabel="View website"
+                aiTier="MEDIUM"
+              />
+            </div>
 
-            <TimelineItem
-              date="March 2026 - May 2026"
-              title="Emmedy Learning Solutions"
-              role="Full Stack Developer"
-              desc="Worked as a Full Stack Developer on a comprehensive Learning Management System (LMS). Developed features that help businesses efficiently schedule, deliver, and track employee training courses."
-              tech={['PHP', 'Symfony', 'Twig', 'JavaScript']}
-              link="https://emmedy.nl"
-              icon={<Terminal size={20} />}
-              highlight
-            />
-
-            <TimelineItem
-              date="Nov 2025 - Jan 2026"
-              title="Coddin"
-              role="Backend Developer"
-              desc="Helped build the internal client and employee portals using Laravel and Filament. I also contributed to various client projects by developing backend features."
-              tech={['PHP', 'Filament', 'Laravel']}
-              link="https://coddin.nl"
-              icon={<Terminal size={20} />}
-              highlight
-            />
-
-            <TimelineItem
-              date="May 2026 - Present"
-              title="Landgasthof Koninghoek"
-              role="Kitchen Staff & Web Developer"
-              desc="Because of staff shortages I often run the kitchen myself, with a trained cook keeping an eye on things. I also built the official website and handle its hosting and maintenance."
-              tech={['Astro', 'React', 'Tailwind']}
-              link="https://koninghoek.de"
-              icon={<ChefHat size={20} />}
-            />
-
-            <TimelineItem
-              date="2022 - April 2026"
-              title="Beim Schweinswirt (Closed)"
-              role="Kitchen Staff & Web Developer"
-              desc="Worked in the kitchen as part of the cooking staff. I also built the official website and handled its hosting and maintenance."
-              tech={['React', 'Vite', 'Tailwind']}
-              icon={<ChefHat size={20} />}
-            />
-
-            <TimelineItem
-              date="2023 - Present"
-              title="Saxion University"
-              role="Associate Degree - Software Development"
-              desc="Intensive 2-year Associate Degree focused on modern software engineering. Covered the full development lifecycle—from system design and data structures to DevOps and team-based implementation."
-              tech={[]}
-              link="https://sd42.nl/"
-              icon={<GraduationCap size={20} />}
-            />
-
-            <TimelineItem
-              date="2018 - 2023"
-              title="Canisius Almelo"
-              role="HAVO (Natuur & Techniek / Gezondheid)"
-              tech={[]}
-              link="https://canisius.nl/"
-              icon={<School size={20} />}
-            />
-
-          </div>
-        </div>
-      </section>
-
-      {/* ABOUT ME */}
-      <section id="about" className="relative z-10 bg-[#050505] py-10 md:py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <SectionTitle title="USER_PROFILE" subtitle="About Me" />
-          <div className="flex flex-col md:flex-row gap-12 items-center">
-            <div className="w-full md:w-1/3">
-              <div className="relative aspect-square rounded-2xl overflow-hidden border-2 border-[#E0115F]">
-                <img src="/me.jpg" alt="Hugo Ouwerkerk" className="w-full h-full object-cover" />
+            <div className="mt-24 md:mt-32">
+              <h3 className="text-sm font-bold tracking-widest text-slate-400 mb-8">EARLIER PROJECTS</h3>
+              <div className="grid md:grid-cols-2 gap-10">
+                <ArchivedProject
+                  title="ProjectBoard"
+                  status="Retired. I used it daily at home."
+                  desc="A small self-hosted project manager for projects, tasks and notes."
+                  stack={["SvelteKit", "FastAPI", "Docker", "SQLite"]}
+                  link="https://github.com/HugoOuwerkerk/ProjectBoard"
+                  image="/project_board.png"
+                  aiTier="LOW"
+                />
+                <ArchivedProject
+                  title="Platzpionier"
+                  status="Shelved. The regulatory liability was too high for one person."
+                  desc="A low-cost reservation tool. An embeddable booking widget for restaurant websites."
+                  stack={["Next.js", "TypeScript", "Supabase", "Tailwind"]}
+                  image="/platzpionier.png"
+                  aiTier="ALL"
+                />
               </div>
             </div>
-            <div className="w-full md:w-2/3 space-y-6 text-lg text-slate-400 leading-relaxed">
-              <p>
-                I'm Hugo, a backend developer who occasionally lets AI handle the pixels. I run Puntcode, my one-person software business, where I'm moving from client websites to building my own products, starting with KraftLab. In my free time, I like to cook and <Link href="/personal" className="text-[#E0115F] underline underline-offset-4 decoration-[#E0115F]/30 hover:decoration-[#E0115F] transition-colors">travel</Link> to places most people don't go.
-              </p>
+          </div>
+        </section>
 
+        {/* EXPERIENCE */}
+        <section id="experience" className="px-6 py-16 md:py-28 scroll-mt-4">
+          <div className="max-w-6xl mx-auto">
+            <SectionTitle title="WORK" subtitle="Experience" />
+
+            <div className="relative border-l-2 border-slate-800 ml-2 md:ml-12 space-y-14">
+              <TimelineItem
+                date="May 2026 - Present"
+                title="Landgasthof Koninghoek"
+                role="Kitchen Staff & Web Developer"
+                desc="I run the kitchen when we're short-staffed, with a trained cook watching over. I also built the restaurant's website and handle its hosting and upkeep."
+                tech={["Astro", "React", "Tailwind"]}
+                link="https://koninghoek.de"
+                icon={<ChefHat size={20} />}
+              />
+              <TimelineItem
+                date="Mar 2026 - May 2026"
+                title="Emmedy Learning Solutions"
+                role="Full Stack Developer"
+                desc="Built features for a learning management system (LMS). It helps companies schedule, deliver and track employee training."
+                tech={["PHP", "Symfony", "Twig", "JavaScript"]}
+                link="https://emmedy.nl"
+                icon={<Terminal size={20} />}
+                highlight
+              />
+              <TimelineItem
+                date="Nov 2025 - Jan 2026"
+                title="Coddin"
+                role="Backend Developer"
+                desc="Built internal client and employee portals with Laravel and Filament. Added backend features to client projects."
+                tech={["PHP", "Laravel", "Filament"]}
+                link="https://coddin.nl"
+                icon={<Terminal size={20} />}
+                highlight
+              />
+              <TimelineItem
+                date="2022 - Apr 2026"
+                title="Beim Schweinswirt (closed)"
+                role="Kitchen Staff & Web Developer"
+                desc="Cooked in the kitchen. Built the restaurant's website and handled its hosting and upkeep."
+                tech={["React", "Vite", "Tailwind"]}
+                icon={<ChefHat size={20} />}
+              />
+            </div>
+
+            <h3 className="text-sm font-bold tracking-widest text-slate-400 mt-16 mb-8">EDUCATION</h3>
+            <div className="relative border-l-2 border-slate-800 ml-2 md:ml-12 space-y-14">
+              <TimelineItem
+                date="2023 - Present"
+                title="Saxion University"
+                role="Associate Degree, Software Development"
+                desc="Two-year degree in software engineering. System design, data structures, DevOps and team projects."
+                tech={[]}
+                link="https://sd42.nl/"
+                icon={<GraduationCap size={20} />}
+              />
+              <TimelineItem
+                date="2018 - 2023"
+                title="Canisius Almelo"
+                role="HAVO (Natuur & Techniek / Gezondheid)"
+                tech={[]}
+                link="https://canisius.nl/"
+                icon={<School size={20} />}
+              />
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* TECH STACK */}
-      <section className="relative z-10 bg-[#050505] py-10 md:py-32 pt-8 md:pt-12 px-6">
-        <div className="max-w-6xl mx-auto">
-          <SectionTitle title="KERNEL_MODULES" subtitle="Experience With" />
-
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4">
-            <TechCard icon={<Terminal />} name="PHP" color="text-[#777BB4]" />
-            <TechCard icon={<Code2 />} name="Python" color="text-[#3776AB]" />
-            <TechCard icon={<Code2 />} name="TypeScript" color="text-[#3178C6]" />
-            <TechCard icon={<Code2 />} name="React" color="text-[#61DAFB]" />
-            <TechCard icon={<Layers />} name="Laravel" color="text-[#FF2D20]" />
-            <TechCard icon={<Code2 />} name="Astro" color="text-[#FF5D01]" />
-            <TechCard icon={<Wind />} name="Tailwind" color="text-[#06B6D4]" />
-            <TechCard icon={<Container />} name="Docker" color="text-[#2496ED]" />
-            <TechCard icon={<Database />} name="SQL" color="text-[#00BCF2]" />
-            <TechCard icon={<GitBranch />} name="Git" color="text-[#F05032]" />
+        {/* ABOUT + SKILLS */}
+        <section id="about" className="px-6 py-16 md:py-28 scroll-mt-4">
+          <div className="max-w-6xl mx-auto">
+            <SectionTitle title="ABOUT" subtitle="About Me" />
+            <div className="flex flex-col md:flex-row gap-12 items-center">
+              <div className="w-full md:w-1/3">
+                <div className="relative aspect-square rounded-2xl overflow-hidden border-2 border-[#E0115F]">
+                  <Image src="/me.jpg" alt="Hugo Ouwerkerk" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover" />
+                </div>
+              </div>
+              <div className="w-full md:w-2/3 space-y-8">
+                <p className="text-lg text-slate-300 leading-relaxed max-w-prose">
+                  I&apos;m Hugo, a full-stack developer who occasionally lets AI handle the pixels. In my free time I cook and{" "}
+                  <Link
+                    href="/personal"
+                    className="text-[#FF3D7F] underline underline-offset-4 decoration-[#FF3D7F]/40 hover:decoration-[#FF3D7F] transition-colors"
+                  >
+                    travel
+                  </Link>{" "}
+                  to places most people don&apos;t go.
+                </p>
+                <dl className="grid grid-cols-[6rem_1fr] gap-x-4 gap-y-3 text-base">
+                  <dt className="text-slate-400">Backend</dt>
+                  <dd className="text-white">PHP, Laravel, Symfony, Python</dd>
+                  <dt className="text-slate-400">Frontend</dt>
+                  <dd className="text-white">TypeScript, React, Astro, Tailwind</dd>
+                  <dt className="text-slate-400">Tools</dt>
+                  <dd className="text-white">Docker, SQL, Git</dd>
+                </dl>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* PROJECTS */}
-      <section className="relative z-10 bg-[#050505] py-10 md:py-32 px-6">
-        <div className="max-w-6xl mx-auto">
-          <SectionTitle title="EXECUTABLES" subtitle="My Projects" />
+        {/* CONTACT */}
+        <section id="contact" className="px-6 py-20 md:py-32 text-center scroll-mt-4 border-t border-slate-800">
+          <motion.div {...reveal} className="max-w-xl mx-auto">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
+              <span className="text-[#E0115F] mr-2">&gt;</span>Get in touch<span className="text-[#E0115F]">_</span>
+            </h2>
+            <p className="text-lg text-white font-bold mb-1">Open to full-stack roles.</p>
+            <p className="text-slate-400 mb-10">Remote or on-site, open to relocating.</p>
 
-          <div className="space-y-20 md:space-y-32">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 mb-4">
+              <a href={`mailto:${EMAIL}`} className={btnPrimary}>
+                <Mail size={20} /> Email me
+              </a>
+              <a href={CV_PATH} download className={btnSecondary}>
+                <Download size={18} /> Download CV
+              </a>
+            </div>
+            <p className="text-slate-400 mb-8">{EMAIL}</p>
 
-            <ProjectShowcase
-              title="KraftLab"
-              desc="A training app for hybrid athletes. Log gym sessions and cardio, plan your week, sync runs from Strava, and connect your own AI assistant as a coach. Available in English, German, and Dutch."
-              stack={['React', 'Vite', 'Express', 'SQLite', 'Capacitor', 'Docker']}
-              link="https://kraftlab.app"
-              color="#E0115F"
-              align="left"
-              image="/kraftlab.jpg"
-              linkLabel="View Website"
-              aiTier="ALL"
-            />
-
-            <ProjectShowcase
-              title="Landgasthof Koninghoek"
-              desc="The official website for the restaurant I work at, in German, English, and Dutch. Features the complete digital menu, table reservations, and pages for events and job openings."
-              stack={['Astro', 'React', 'Tailwind', 'Docker']}
-              link="https://www.koninghoek.de"
-              color="#E0115F"
-              align="right"
-              image="/koninghoek.jpg"
-              linkLabel="View Website"
-              aiTier="HIGH"
-            />
-
-            <ProjectShowcase
-              title="Puntcode"
-              desc="My one-person software business, moving from client websites to building my own products, like KraftLab."
-              stack={['Astro', 'React', 'TypeScript', 'Tailwind']}
-              link="https://puntcode.de"
-              color="#E0115F"
-              align="left"
-              image="/puntcode.jpg"
-              linkLabel="View Website"
-              maskLink={false}
-              aiTier="MEDIUM"
-            />
-
-            <ProjectShowcase
-              title="ProjectBoard"
-              desc="A minimal self-hosted project manager to organize projects, tasks, and notes involved in the development lifecycle. Built with SvelteKit and FastAPI, running in Docker. (Retired, I used it daily for my own projects while running it at home)"
-              stack={['SvelteKit', 'FastAPI', 'Docker', 'SQLite']}
-              link="https://github.com/HugoOuwerkerk/ProjectBoard"
-              color="#E0115F"
-              align="right"
-              linkLabel="View GitHub"
-              image="/project_board.png"
-              aiTier="LOW"
-            />
-
-            <ProjectShowcase
-              title="Platzpionier"
-              desc="A simple, low-cost reservation tool that provides restaurants with an embeddable booking widget for their website. (Shelved, Regulatory liability was too high for a solo operation)"
-              stack={['Next.js', 'TypeScript', 'Supabase', 'Tailwind']}
-              link="https://github.com/HugoOuwerkerk/Platzpionier"
-              color="#E0115F"
-              align="left"
-              image="/platzpionier.png"
-              linkLabel="View GitHub"
-              maskLink={true}
-              aiTier="ALL"
-            />
-
-
-
-          </div>
-        </div>
-      </section>
-
-      {/* CONTACT */}
-      <section className="py-10 md:py-32 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8">
-          <span className="text-[#E0115F] mr-2">&gt;</span>
-          Get In Touch
-          <span className="text-[#E0115F] animate-pulse">_</span>
-        </h2>
-        <p className="text-slate-400 mb-8 max-w-xl mx-auto">
-          Based in Uelsen, Germany.
-        </p>
-
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6 mb-8 md:mb-12">
-          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
-            <a href="mailto:hah.ouwerkerk@outlook.com" className="flex items-center gap-2 justify-center text-white hover:text-[#E0115F] transition-all duration-300 ease-in-out group">
-              <span className="font-mono">hah.ouwerkerk@outlook.com</span>
-            </a>
-            <span className="hidden md:inline text-[#E0115F]">///</span>
-            <a href="tel:+310621232450" className="flex items-center gap-2 justify-center text-white hover:text-[#E0115F] transition-all duration-300 ease-in-out group">
-              <span className="font-mono">+31 06 21 23 24 50</span>
-            </a>
-          </div>
-
-          <span className="hidden md:inline text-[#E0115F]">///</span>
-
-          <div className="flex items-center gap-6">
-            <a href="https://github.com/HugoOuwerkerk" target="_blank" className="flex items-center gap-2 justify-center text-white hover:text-[#E0115F] transition-all duration-300 ease-in-out group">
-              <span className="font-mono">GitHub</span>
-            </a>
-            <span className="hidden md:inline text-[#E0115F]">///</span>
-            <a href="https://www.linkedin.com/in/hugo-ouwerkerk-461125295/" target="_blank" className="flex items-center gap-2 justify-center text-white hover:text-[#E0115F] transition-all duration-300 ease-in-out group">
-              <span className="font-mono">LinkedIn</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
-    </main >
+            <div className="flex items-center justify-center gap-6">
+              <a href={GITHUB} target="_blank" rel="noopener noreferrer" className={linkQuiet}>
+                GitHub
+              </a>
+              <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className={linkQuiet}>
+                LinkedIn
+              </a>
+            </div>
+          </motion.div>
+        </section>
+      </main>
+    </MotionConfig>
   );
 }
 
-function SectionTitle({ title, subtitle }: any) {
+function SectionTitle({ title, subtitle }: { title: string; subtitle: string }) {
   return (
-    <div className="mb-10 md:mb-16">
-      <div className="text-4xl md:text-5xl font-bold text-white">{subtitle}</div>
+    <div className="mb-10 md:mb-14">
+      <div className="text-xs md:text-sm font-bold tracking-widest text-slate-400 mb-3">{title}</div>
+      <h2 className="text-4xl md:text-5xl font-bold text-white">{subtitle}</h2>
     </div>
-  )
+  );
 }
 
 interface TimelineItemProps {
@@ -308,143 +301,145 @@ interface TimelineItemProps {
 
 function TimelineItem({ date, title, role, desc, tech, icon, highlight, link }: TimelineItemProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      className="relative pl-8 md:pl-12"
-    >
-      {/* Icon on line */}
-      <div className={`absolute -left-[21px] top-0 w-10 h-10 rounded-full border-4 border-[#050505] flex items-center justify-center transition-colors ${highlight ? 'bg-[#E0115F] text-white' : 'bg-slate-800 text-slate-400 group-hover:bg-slate-700'}`}>
+    <motion.div {...reveal} className="relative pl-8 md:pl-12">
+      <div
+        className={`absolute -left-[21px] top-0 w-10 h-10 rounded-full border-4 border-[#050505] flex items-center justify-center ${
+          highlight ? "bg-[#E0115F] text-white" : "bg-slate-800 text-slate-300"
+        }`}
+      >
         {icon}
       </div>
 
-      <div className="flex flex-col md:flex-row gap-4 mb-2">
-        <span className="font-mono text-[#E0115F] text-sm pt-1">{date}</span>
+      <div className="flex flex-col md:flex-row gap-1 md:gap-6 mb-2">
+        <span className="font-mono text-slate-300 text-sm pt-1 md:w-44 shrink-0">{date}</span>
         <div>
-          <h3 className="text-2xl font-bold text-white flex items-center gap-2">
+          <h3 className="text-2xl font-bold text-white flex flex-wrap items-center gap-x-3 gap-y-1">
             {link ? (
-              <a href={link} target="_blank" className="hover:text-[#E0115F] transition-all duration-300 ease-in-out flex items-center gap-2">
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#FF3D7F] transition-colors inline-flex items-center gap-2"
+              >
                 {title}
-                <ExternalLink size={18} className="opacity-50 hover:opacity-100 transition-opacity" />
+                <ExternalLink size={18} className="opacity-70" />
               </a>
             ) : (
               title
             )}
-            {highlight && <span className="text-[10px] bg-[#E0115F] text-white px-2 py-0.5 rounded-full">INTERN</span>}
+            {highlight && <span className="text-xs bg-[#E0115F] text-white px-2 py-0.5 rounded-full">INTERN</span>}
           </h3>
-          <div className="text-slate-400 font-mono text-sm mb-4">{role}</div>
+          <div className="text-slate-400 font-mono text-sm mb-3">{role}</div>
         </div>
-      </div >
-
-      {desc && <p className="text-slate-400 max-w-2xl mb-4 leading-relaxed">{desc}</p>
-      }
-
-      {
-        tech && tech.length > 0 && (
-          <div className="flex flex-wrap gap-2">
-            {tech.map((t: string) => (
-              <span key={t} className="px-2 py-1 bg-slate-900 border border-slate-800 text-xs text-slate-300 rounded font-mono">
-                {t}
-              </span>
-            ))}
-          </div>
-        )
-      }
-    </motion.div >
-  )
-}
-
-interface TechCardProps {
-  icon: React.ReactNode;
-  name: string;
-  color: string;
-}
-
-function TechCard({ icon, name, color }: TechCardProps) {
-  return (
-    <div
-      className="bg-slate-900/50 border border-slate-800 p-4 md:p-6 flex items-center gap-4 transition-colors group"
-    >
-      <div className={`${color}`}>{icon}</div>
-      <div>
-        <div className="font-bold text-white">{name}</div>
       </div>
-    </div>
-  )
+
+      {desc && <p className="text-slate-300 max-w-2xl mb-4 leading-relaxed md:ml-[12.5rem]">{desc}</p>}
+
+      {tech.length > 0 && (
+        <div className="flex flex-wrap gap-2 md:ml-[12.5rem]">
+          {tech.map((t) => (
+            <span key={t} className="px-2 py-1 bg-slate-900 border border-slate-800 text-xs text-slate-300 rounded font-mono">
+              {t}
+            </span>
+          ))}
+        </div>
+      )}
+    </motion.div>
+  );
 }
+
+type AiTier = "NONE" | "LOW" | "MEDIUM" | "HIGH" | "ALL";
+
+const AI_TIERS: Record<AiTier, string> = {
+  NONE: "Hand-crafted with hot chocolate",
+  LOW: "Hand-crafted with a sprinkle of AI",
+  MEDIUM: "50% Human, 50% Autocomplete",
+  HIGH: "25% Human, 75% Autocomplete",
+  ALL: "Prompt-engineered to perfection",
+};
 
 interface ProjectShowcaseProps {
   title: string;
   desc: string;
   stack: string[];
   link: string;
-  color: string;
-  align: 'left' | 'right';
-  image?: string;
-  linkLabel?: string;
-  maskLink?: boolean;
-  aiTier?: 'NONE' | 'LOW' | 'MEDIUM' | 'HIGH' | 'ALL';
+  align: "left" | "right";
+  image: string;
+  linkLabel: string;
+  aiTier: AiTier;
 }
 
-function ProjectShowcase({ title, desc, stack, link, color, align, image, linkLabel = "View Deployment", maskLink = false, aiTier }: ProjectShowcaseProps) {
-
-  const AI_TIERS: any = {
-    NONE: "Hand-crafted with hot chocolate",
-    LOW: "Hand-crafted with a sprinkle of AI",
-    MEDIUM: "50% Human, 50% Autocomplete",
-    HIGH: "25% Human, 75% Autocomplete",
-    ALL: "Prompt-engineered to perfection"
-  };
-
+function ProjectShowcase({ title, desc, stack, link, align, image, linkLabel, aiTier }: ProjectShowcaseProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      className={`flex flex-col ${align === 'right' ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 md:gap-12 items-center w-full`}
+      {...reveal}
+      className={`flex flex-col ${align === "right" ? "md:flex-row-reverse" : "md:flex-row"} gap-8 md:gap-12 items-center w-full`}
     >
-      {/* Image Side */}
-      <div className="w-full md:w-[60%] group relative">
-        <div className="aspect-[16/9] overflow-hidden rounded-xl">
-          {image ? (
-            <img src={image} alt={title} className="w-full h-full object-cover object-top" />
-          ) : (
-            <div className="w-full h-full flex items-center justify-center font-mono text-slate-700">NO_PREVIEW_AVAILABLE</div>
-          )}
+      <div className="w-full md:w-[60%]">
+        <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+          <Image src={image} alt={`${title} screenshot`} fill sizes="(max-width: 768px) 100vw, 60vw" className="object-cover object-top" />
         </div>
       </div>
 
-      {/* Content */}
-      <div className="w-full md:w-[40%] space-y-8">
+      <div className="w-full md:w-[40%] space-y-6">
         <div>
           <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">{title}</h3>
-
-          {aiTier && (
-            <div className="font-mono text-[10px] md:text-xs text-[#E0115F]/80 mb-2">
-              {AI_TIERS[aiTier]}
-            </div>
-          )}
-
-          <div className={`h-1 w-20 bg-[${color}]`} />
+          <div className="font-mono text-sm text-[#FF3D7F] mb-3">{AI_TIERS[aiTier]}</div>
+          <div className="h-1 w-20 bg-[#E0115F]" />
         </div>
 
-        <p className="text-slate-400 leading-relaxed text-lg">
-          {desc}
-        </p>
+        <p className="text-slate-300 leading-relaxed text-lg">{desc}</p>
 
-        <div className="flex flex-wrap gap-3">
-          {stack.map((t: string) => (
-            <span key={t} className="font-mono text-sm text-slate-500">{t}</span>
-          ))}
-        </div>
+        <p className="font-mono text-sm text-slate-400">{stack.join(" · ")}</p>
 
-        {!maskLink && (
-          <a href={link} target="_blank" className="inline-flex items-center gap-2 text-white hover:text-[#E0115F] transition-colors font-bold group">
-            {linkLabel} <ExternalLink size={16} className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
-          </a>
-        )}
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 min-h-11 text-white hover:text-[#FF3D7F] transition-colors font-bold group"
+        >
+          {linkLabel}
+          <ExternalLink size={16} className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
+        </a>
       </div>
     </motion.div>
-  )
+  );
+}
+
+interface ArchivedProjectProps {
+  title: string;
+  status: string;
+  desc: string;
+  stack: string[];
+  link?: string;
+  image: string;
+  aiTier: AiTier;
+}
+
+function ArchivedProject({ title, status, desc, stack, link, image, aiTier }: ArchivedProjectProps) {
+  return (
+    <motion.div {...reveal} className="space-y-4">
+      <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+        <Image src={image} alt={`${title} screenshot`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-top opacity-80" />
+      </div>
+      <div>
+        <h4 className="text-2xl font-bold text-white">{title}</h4>
+        <div className="font-mono text-sm text-[#FF3D7F] mt-1">{AI_TIERS[aiTier]}</div>
+      </div>
+      <p className="text-slate-300 leading-relaxed">
+        <span className="text-white font-bold">{status}</span> {desc}
+      </p>
+      <p className="font-mono text-sm text-slate-400">{stack.join(" · ")}</p>
+      {link && (
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 min-h-11 text-white hover:text-[#FF3D7F] transition-colors font-bold"
+        >
+          View GitHub <ExternalLink size={16} />
+        </a>
+      )}
+    </motion.div>
+  );
 }
