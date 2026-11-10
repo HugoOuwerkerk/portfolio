@@ -3,7 +3,6 @@
 import { motion, MotionConfig, useReducedMotion, useScroll, useSpring } from "framer-motion";
 import { ArrowDown, ChefHat, Download, ExternalLink, GraduationCap, Mail, School, Terminal } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 
 const EMAIL = "hah.ouwerkerk@outlook.com";
 const CV_PATH = "/Hugo-Ouwerkerk-CV.pdf";
@@ -59,9 +58,9 @@ export default function Home() {
               Full-stack developer
             </p>
             <p className="text-lg text-slate-300 leading-relaxed mb-2">
-              I build web apps. I run Puntcode, my own software business, and I work in a restaurant kitchen.
+              I build web apps and try to make them profitable. I also work in a restaurant kitchen, as a hobby and a side job.
             </p>
-            <p className="text-lg text-white font-bold leading-relaxed mb-1">Open to full-stack roles.</p>
+            <p className="text-lg text-white font-bold leading-relaxed mb-1">Open to full-stack and backend roles.</p>
             <p className="text-base text-slate-400 mb-10">Remote or on-site, open to relocating. Based in Uelsen, Germany.</p>
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 mb-6">
@@ -81,7 +80,7 @@ export default function Home() {
         {/* PROJECTS */}
         <section id="projects" className="px-6 py-16 md:py-28 scroll-mt-4">
           <div className="max-w-6xl mx-auto">
-            <SectionTitle title="PROJECTS" subtitle="My Projects" />
+            <SectionTitle title="My Projects" />
 
             <div className="space-y-20 md:space-y-28">
               <ProjectShowcase
@@ -97,7 +96,7 @@ export default function Home() {
 
               <ProjectShowcase
                 title="Landgasthof Koninghoek"
-                desc="The website for the restaurant I work at. Digital menu, table reservations, events and job openings. In German, English and Dutch."
+                desc="The website for the restaurant I work at. Digital menu, events and job openings, in German, English and Dutch. I tried to get the SEO as right as I could: structured data, hreflang tags and a sitemap."
                 stack={["Astro", "React", "Tailwind", "Docker"]}
                 link="https://www.koninghoek.de"
                 align="right"
@@ -108,7 +107,7 @@ export default function Home() {
 
               <ProjectShowcase
                 title="Puntcode"
-                desc="My one-person software business. I'm moving from client websites to my own products, like KraftLab."
+                desc="My one-person software business. I'm trying to move from client websites to my own products, like KraftLab, and to make some money while I'm at it."
                 stack={["Astro", "React", "TypeScript", "Tailwind"]}
                 link="https://puntcode.de"
                 align="left"
@@ -146,14 +145,14 @@ export default function Home() {
         {/* EXPERIENCE */}
         <section id="experience" className="px-6 py-16 md:py-28 scroll-mt-4">
           <div className="max-w-6xl mx-auto">
-            <SectionTitle title="WORK" subtitle="Experience" />
+            <SectionTitle title="Experience" />
 
             <div className="relative border-l-2 border-slate-800 ml-2 md:ml-12 space-y-14">
               <TimelineItem
                 date="May 2026 - Present"
                 title="Landgasthof Koninghoek"
                 role="Kitchen Staff & Web Developer"
-                desc="I run the kitchen when we're short-staffed, with a trained cook watching over. I also built the restaurant's website and handle its hosting and upkeep."
+                desc="I run the kitchen when we're short-staffed, with a trained cook keeping a close eye on me. I also built the restaurant's website, host it, and fix it when it breaks."
                 tech={["Astro", "React", "Tailwind"]}
                 link="https://koninghoek.de"
                 icon={<ChefHat size={20} />}
@@ -214,7 +213,7 @@ export default function Home() {
         {/* ABOUT + SKILLS */}
         <section id="about" className="px-6 py-16 md:py-28 scroll-mt-4">
           <div className="max-w-6xl mx-auto">
-            <SectionTitle title="ABOUT" subtitle="About Me" />
+            <SectionTitle title="About Me" />
             <div className="flex flex-col md:flex-row gap-12 items-center">
               <div className="w-full md:w-1/3">
                 <div className="relative aspect-square rounded-2xl overflow-hidden border-2 border-[#E0115F]">
@@ -223,14 +222,7 @@ export default function Home() {
               </div>
               <div className="w-full md:w-2/3 space-y-8">
                 <p className="text-lg text-slate-300 leading-relaxed max-w-prose">
-                  I&apos;m Hugo, a full-stack developer who occasionally lets AI handle the pixels. In my free time I cook and{" "}
-                  <Link
-                    href="/personal"
-                    className="text-[#FF3D7F] underline underline-offset-4 decoration-[#FF3D7F]/40 hover:decoration-[#FF3D7F] transition-colors"
-                  >
-                    travel
-                  </Link>{" "}
-                  to places most people don&apos;t go.
+                  I&apos;m Hugo, a full-stack developer who occasionally lets AI handle the pixels. In my free time I cook.
                 </p>
                 <dl className="grid grid-cols-[6rem_1fr] gap-x-4 gap-y-3 text-base">
                   <dt className="text-slate-400">Backend</dt>
@@ -251,7 +243,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
               <span className="text-[#E0115F] mr-2">&gt;</span>Get in touch<span className="text-[#E0115F]">_</span>
             </h2>
-            <p className="text-lg text-white font-bold mb-1">Open to full-stack roles.</p>
+            <p className="text-lg text-white font-bold mb-1">Open to full-stack and backend roles.</p>
             <p className="text-slate-400 mb-10">Remote or on-site, open to relocating.</p>
 
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-4 mb-4">
@@ -279,13 +271,8 @@ export default function Home() {
   );
 }
 
-function SectionTitle({ title, subtitle }: { title: string; subtitle: string }) {
-  return (
-    <div className="mb-10 md:mb-14">
-      <div className="text-xs md:text-sm font-bold tracking-widest text-slate-400 mb-3">{title}</div>
-      <h2 className="text-4xl md:text-5xl font-bold text-white">{subtitle}</h2>
-    </div>
-  );
+function SectionTitle({ title }: { title: string }) {
+  return <h2 className="mb-10 md:mb-14 text-4xl md:text-5xl font-bold text-white">{title}</h2>;
 }
 
 interface TimelineItemProps {
