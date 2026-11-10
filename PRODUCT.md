@@ -10,7 +10,7 @@ web
 Hiring managers, recruiters and engineering leads evaluating Hugo Ouwerkerk for jobs or internships. They arrive from a CV or LinkedIn link, skim for what he has actually shipped and what he is like to work with, and decide whether to get in touch.
 
 ## Product Purpose
-Personal portfolio of Hugo Ouwerkerk, a software developer based in Uelsen, Germany (Associate Degree in Software Development at Saxion, in progress). It exists to turn a visit into an interview or an email. Success is a hiring manager contacting him.
+Personal portfolio of Hugo Ouwerkerk, a software developer based in Uelsen, Germany (Associate Degree in Software Development at Saxion, in progress, expected early 2027). It exists to turn a visit into an interview or an email. Success is a hiring manager contacting him.
 
 ## Positioning
 A full-stack developer who also runs a restaurant kitchen, builds and hosts the restaurant's website, and runs his own one-person software business (Puntcode) shipping real products such as KraftLab. A typical developer portfolio can't truthfully claim this mix.

@@ -132,7 +132,7 @@ export default function Home() {
                 <ArchivedProject
                   title="Platzpionier"
                   status="Shelved. The regulatory liability was too high for one person."
-                  desc="A low-cost reservation tool. An embeddable booking widget for restaurant websites."
+                  desc="A low-cost booking widget that restaurants can embed on their website."
                   stack={["Next.js", "TypeScript", "Supabase", "Tailwind"]}
                   image="/platzpionier.png"
                   aiTier="ALL"
@@ -190,10 +190,10 @@ export default function Home() {
             <h3 className="text-sm font-bold tracking-widest text-slate-400 mt-16 mb-8">EDUCATION</h3>
             <div className="relative border-l-2 border-slate-800 ml-2 md:ml-12 space-y-14">
               <TimelineItem
-                date="2023 - Present"
+                date="2023 - Early 2027"
                 title="Saxion University"
-                role="Associate Degree, Software Development"
-                desc="Two-year degree in software engineering. System design, data structures, DevOps and team projects."
+                role="Associate Degree, Software Development (expected)"
+                desc="Software engineering: system design, data structures, DevOps and team projects."
                 tech={[]}
                 link="https://sd42.nl/"
                 icon={<GraduationCap size={20} />}

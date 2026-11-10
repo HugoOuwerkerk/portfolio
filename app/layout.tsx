@@ -9,8 +9,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hugo Ouwerkerk - Software Developer",
-  description: "Personal portfolio of Hugo Ouwerkerk.",
+  title: "Hugo Ouwerkerk - Full-stack Developer",
+  description: "Full-stack developer in Uelsen, Germany. Projects, experience and CV.",
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon.ico',
