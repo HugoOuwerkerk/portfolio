@@ -30,7 +30,7 @@ Single-page portfolio (hero, projects, experience and education, about and skill
 - Not confirmed as fixed: the current stack (no decision recorded either way).
 
 ## Brand Commitments
-Name: Hugo Ouwerkerk. Honest, lightly self-deprecating voice about AI use ("a full-stack developer who occasionally lets AI handle the pixels"). No other visual or identity commitments were made binding.
+Name: Hugo Ouwerkerk. Honest, dry voice, including about AI use (the per-project AI-tier captions). The "lets AI handle the pixels" line was dropped from About on request. No other visual or identity commitments were made binding.
 
 ## Evidence on Hand
 Live projects with screenshots in `public/`: KraftLab, Landgasthof Koninghoek, Puntcode, ProjectBoard (retired), Platzpionier (shelved). Work history: Emmedy Learning Solutions, Coddin, Landgasthof Koninghoek, Beim Schweinswirt (closed). No testimonials, metrics or client quotes exist; do not invent them.

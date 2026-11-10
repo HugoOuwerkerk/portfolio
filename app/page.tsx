@@ -222,7 +222,7 @@ export default function Home() {
               </div>
               <div className="w-full md:w-2/3 space-y-8">
                 <p className="text-lg text-slate-300 leading-relaxed max-w-prose">
-                  I&apos;m Hugo, a full-stack developer who occasionally lets AI handle the pixels. In my free time I cook.
+                  I&apos;m Hugo, a full-stack developer from Uelsen, Germany. I run Puntcode, my own software business, and AI helps me build faster. Outside work I cook and lift, and I&apos;m building KraftLab, a training app for people who lift and run.
                 </p>
                 <dl className="grid grid-cols-[6rem_1fr] gap-x-4 gap-y-3 text-base">
                   <dt className="text-slate-400">Backend</dt>
