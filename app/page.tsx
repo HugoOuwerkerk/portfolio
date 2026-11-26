@@ -16,13 +16,6 @@ const btnSecondary =
 const linkQuiet =
   "inline-flex items-center min-h-11 text-slate-300 hover:text-white transition-colors underline underline-offset-4 decoration-slate-600 hover:decoration-[#E0115F]";
 
-const reveal = {
-  initial: { opacity: 0, y: 20 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-40px" },
-  transition: { duration: 0.4, ease: "easeOut" as const },
-};
-
 export default function Home() {
   const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
@@ -160,7 +153,7 @@ export default function Home() {
               <TimelineItem
                 date="Mar 2026 - May 2026"
                 title="Emmedy Learning Solutions"
-                role="Full Stack Developer"
+                role="Full Stack Developer (internship)"
                 desc="Built features for a learning management system (LMS). It helps companies schedule, deliver and track employee training."
                 tech={["PHP", "Symfony", "Twig", "JavaScript"]}
                 link="https://emmedy.nl"
@@ -170,7 +163,7 @@ export default function Home() {
               <TimelineItem
                 date="Nov 2025 - Jan 2026"
                 title="Coddin"
-                role="Backend Developer"
+                role="Backend Developer (internship)"
                 desc="Built internal client and employee portals with Laravel and Filament. Added backend features to client projects."
                 tech={["PHP", "Laravel", "Filament"]}
                 link="https://coddin.nl"
@@ -239,7 +232,7 @@ export default function Home() {
 
         {/* CONTACT */}
         <section id="contact" className="px-6 py-20 md:py-32 text-center scroll-mt-4 border-t border-slate-800">
-          <motion.div {...reveal} className="max-w-xl mx-auto">
+          <div className="max-w-xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">
               <span className="text-[#E0115F] mr-2">&gt;</span>Get in touch<span className="text-[#E0115F]">_</span>
             </h2>
@@ -264,7 +257,7 @@ export default function Home() {
                 LinkedIn
               </a>
             </div>
-          </motion.div>
+          </div>
         </section>
       </main>
     </MotionConfig>
@@ -288,7 +281,7 @@ interface TimelineItemProps {
 
 function TimelineItem({ date, title, role, desc, tech, icon, highlight, link }: TimelineItemProps) {
   return (
-    <motion.div {...reveal} className="relative pl-8 md:pl-12">
+    <div className="relative pl-8 md:pl-12">
       <div
         className={`absolute -left-[21px] top-0 w-10 h-10 rounded-full border-4 border-[#050505] flex items-center justify-center ${
           highlight ? "bg-[#E0115F] text-white" : "bg-slate-800 text-slate-300"
@@ -314,7 +307,6 @@ function TimelineItem({ date, title, role, desc, tech, icon, highlight, link }: 
             ) : (
               title
             )}
-            {highlight && <span className="text-xs bg-[#E0115F] text-white px-2 py-0.5 rounded-full">INTERN</span>}
           </h3>
           <div className="text-slate-400 font-mono text-sm mb-3">{role}</div>
         </div>
@@ -331,7 +323,7 @@ function TimelineItem({ date, title, role, desc, tech, icon, highlight, link }: 
           ))}
         </div>
       )}
-    </motion.div>
+    </div>
   );
 }
 
@@ -358,8 +350,7 @@ interface ProjectShowcaseProps {
 
 function ProjectShowcase({ title, desc, stack, link, align, image, linkLabel, aiTier }: ProjectShowcaseProps) {
   return (
-    <motion.div
-      {...reveal}
+    <div
       className={`flex flex-col ${align === "right" ? "md:flex-row-reverse" : "md:flex-row"} gap-8 md:gap-12 items-center w-full`}
     >
       <div className="w-full md:w-[60%]">
@@ -377,7 +368,7 @@ function ProjectShowcase({ title, desc, stack, link, align, image, linkLabel, ai
 
         <p className="text-slate-300 leading-relaxed text-lg">{desc}</p>
 
-        <p className="font-mono text-sm text-slate-400">{stack.join(" · ")}</p>
+        <p className="font-mono text-sm text-slate-400">{stack.join(", ")}</p>
 
         <a
           href={link}
@@ -389,7 +380,7 @@ function ProjectShowcase({ title, desc, stack, link, align, image, linkLabel, ai
           <ExternalLink size={16} className="group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" />
         </a>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -405,7 +396,7 @@ interface ArchivedProjectProps {
 
 function ArchivedProject({ title, status, desc, stack, link, image, aiTier }: ArchivedProjectProps) {
   return (
-    <motion.div {...reveal} className="space-y-4">
+    <div className="space-y-4">
       <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
         <Image src={image} alt={`${title} screenshot`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover object-top opacity-80" />
       </div>
@@ -416,7 +407,7 @@ function ArchivedProject({ title, status, desc, stack, link, image, aiTier }: Ar
       <p className="text-slate-300 leading-relaxed">
         <span className="text-white font-bold">{status}</span> {desc}
       </p>
-      <p className="font-mono text-sm text-slate-400">{stack.join(" · ")}</p>
+      <p className="font-mono text-sm text-slate-400">{stack.join(", ")}</p>
       {link && (
         <a
           href={link}
@@ -427,6 +418,6 @@ function ArchivedProject({ title, status, desc, stack, link, image, aiTier }: Ar
           View GitHub <ExternalLink size={16} />
         </a>
       )}
-    </motion.div>
+    </div>
   );
 }
